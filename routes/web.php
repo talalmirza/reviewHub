@@ -2,14 +2,14 @@
 
 Route::get('/', function(){
 
-    return view('index');
+    return view('user.index');
 });
 
 
 Route::get ('/livefeed' , function(){
 
 
-    return view ('livefeed');
+    return view ('user.livefeed');
 
 
 });
@@ -19,17 +19,54 @@ Route::get ('/livefeed' , function(){
 Route::get ('/profile' , function(){
 
 
-    return view ('profile');
+    return view ('user.profile');
 
 
 });
 
 
 
-Route::get ('categories' , function(){
+Route::get ('dashboard' , function(){
 
 
-    return view ('categories');
+    return view ('admin.dashboard');
+
+
+});
+
+
+Route::get ('livefeed#category_list' , function(){
+
+
+    return view ('user.livefeed');
+
+
+});
+
+
+
+Route::get ('posts' , function(){
+
+
+    return view ('admin.posts');
+
+
+});
+
+Route::get ('settings' , function(){
+
+
+    return view ('admin.settings');
+
+
+});
+
+
+
+Route::get ('secretdoor' , function(){
+
+
+    return view ('admin.secretdoor');
 
 
 });

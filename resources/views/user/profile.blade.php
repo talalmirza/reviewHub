@@ -1,11 +1,11 @@
-@extends ('masterlayout')
+@extends ('user.masterlayout')
 
 
 @section('content')
 
     <div class="page">
 
-        @include('partials.navbar')
+        @include('user.partials.navbar')
 
 
         <div class="container">

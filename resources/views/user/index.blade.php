@@ -1,4 +1,4 @@
-@extends ('masterlayout')
+@extends ('user.masterlayout')
 
 
 @section ('content')
@@ -24,8 +24,8 @@
 
 
 
-      @include ('partials.modal')
-            @include ('partials.mainbanner')
+      @include ('user.partials.modal')
+            @include ('user.partials.mainbanner')
 
         </header>
 
@@ -152,7 +152,9 @@
 
                 </div><!-- end row -->
 
-                <a href="{{ url ('categories') }}" type="button" class="btn btn-info" style="float:right;">More Categories</a>
+                <a href="{{ url ('livefeed#category_list') }}" type="button" class="btn btn-info" style="float:right;">More Categories</a>
+
+
             </div><!-- end container -->
         </section>
 

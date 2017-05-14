@@ -30,7 +30,7 @@
 
 <body>
 
-    @yield ('content');
+    @yield ('content')
 
 
     <!--=== Load JS here for greater good ====-->
@@ -45,8 +45,9 @@
     <script src="js/portfolio-custom2.js"></script>
     <script src="js/main.js"></script>
 
+    @yield ('custom-script')
 
-    @include ('partials.footer')
+    @include ('user.partials.footer')
 
 </body>
 
