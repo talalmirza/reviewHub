@@ -184,6 +184,9 @@ legend {
   padding: 0;
   border: 0;
 }
+
+#success_message{ display: none;}
+
 textarea {
   overflow: auto;
 }
@@ -7142,6 +7145,10 @@ button.close {
 }
 
 @media screen and (max-width:767px){
+  .moblivefeednavmargin {
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
 
 
 }

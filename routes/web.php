@@ -71,6 +71,15 @@ Route::get ('secretdoor' , function(){
 
 });
 
+
+Route::get ('contact' , function(){
+
+
+    return view ('user.contact');
+
+
+});
+
 ?>
 
 

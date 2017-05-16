@@ -14,7 +14,8 @@
 
             <div class="row">
 
-                <ul class="nav nav-tabs" style="margin:3% 0 3%">
+                <ul class="nav nav-tabs nav-justified" style="margin:3% 0 3%">
+
 
                     <li role="presentation" class="active"><a data-toggle="tab" href="#livefeed">Livefeed</a></li>
                     <li role="presentation"><a data-toggle="tab" href="#subslist">Subscribed</a></li>
