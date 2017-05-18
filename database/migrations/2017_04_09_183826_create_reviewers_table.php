@@ -18,7 +18,7 @@ class CreateReviewersTable extends Migration
             $table->string('email')->unique();
             $table->string('first_name');
             $table->string('last_name');
-//$table->string('avatar');
+            $table->string('avatar');
 
             $table->date('date_of_birth');
             $table->string('city');

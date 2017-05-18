@@ -10,11 +10,16 @@ class Reviewer extends Model
 
     public function reviews()
     {
-        return $this->hasMany('Review');
+        return $this->hasMany(Review::class);
     }
 
     public function rank()
     {
-        return $this->hasOne('Rank');
+        return $this->belongsTo(Rank::class);
+    }
+
+    public function followers()
+    {
+        return $this->belongsToMany(Member::class);
     }
 }

@@ -10,16 +10,21 @@ class Member extends Model
 
     public function macaddresses()
     {
-        return $this->hasMany('Macaddress');
+        return $this->belongsToMany(Macaddress::class);
     }
 
     public function comments()
     {
-        return $this->hasMany('Comment');
+        return $this->hasMany(Comment::class);
     }
 
     public function likes()
     {
-        return $this->hasMany('Likes');
+        return $this->hasMany(Like::class);
+    }
+
+    public function followings()
+    {
+        return $this->belongsToMany(Reviewer::class);
     }
 }

@@ -10,26 +10,31 @@ class Review extends Model
 
     public function comments()
     {
-        return $this->hasMany('Comment');
+        return $this->hasMany(Comment::class);
     }
 
     public function category()
     {
-        return $this->hasOne('App\Category');
+        return $this->belongsTo(Category::class);
     }
 
     public function tags()
     {
-        return $this->hasMany('Tag');
+        return $this->belongsToMany(Tag::class);
     }
 
     public function likes()
     {
-        return $this->hasMany('Likes');
+        return $this->hasMany(Likes::class);
     }
 
     public function reviewImages()
     {
-        return $this->hasMany('ReviewImage');
+        return $this->hasMany(ReviewImage::class);
+    }
+
+    public function reviewer()
+    {
+        return $this->belongsTo(Reviewer::class);
     }
 }
