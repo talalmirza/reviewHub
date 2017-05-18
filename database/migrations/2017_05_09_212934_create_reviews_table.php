@@ -19,7 +19,7 @@ class CreateReviewsTable extends Migration
             $table->text('caption');
             $table->longText('body');
 
-            $table->integer('category_id');
+            $table->smallInteger('category_id');
             $table->integer('reviewer_id');
             $table->timestamps();
         });

@@ -31,7 +31,7 @@ class CreateReviewersTable extends Migration
             $table->text('about')->nullable();
 
 
-            $table->integer('rank_id');
+            $table->smallInteger('rank_id');
             $table->timestamps();
 
             $table->rememberToken();
