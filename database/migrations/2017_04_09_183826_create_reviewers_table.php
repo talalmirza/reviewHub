@@ -30,6 +30,8 @@ class CreateReviewersTable extends Migration
             $table->integer('rating'); //1-5
             $table->text('about')->nullable();
 
+
+            $table->integer('rank_id');
             $table->timestamps();
 
             $table->rememberToken();

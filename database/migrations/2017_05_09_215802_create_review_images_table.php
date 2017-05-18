@@ -15,7 +15,8 @@ class CreateReviewImagesTable extends Migration
     {
         Schema::create('review_images', function (Blueprint $table) {
             $table->increments('id');
-//$table->string('image');
+            $table->string('image');
+            $table->integer('review_id');
             $table->timestamps();
         });
     }
