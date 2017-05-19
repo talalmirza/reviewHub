@@ -41,7 +41,7 @@
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#">Logout</a>
                         </li>
-                        <li><a href="profile.html">Profile</a>
+                        <li><a href="{{ url ('profile') }}">Profile</a>
                         </li>
                         <li><a href="#">Settings</a>
                         </li>

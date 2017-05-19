@@ -16,7 +16,7 @@ Route::get ('/livefeed' , function(){
 
 
 
-Route::get ('/profile' , function(){
+Route::get ('profile' , function(){
 
 
     return view ('user.profile');
