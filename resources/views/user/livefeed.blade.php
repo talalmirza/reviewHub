@@ -31,6 +31,7 @@
 
                             <div class="row">
 
+                                <div class="col-md-10 col-sm-12">
 
                                     @include ('user.partials.postbox')
                                     @include ('user.partials.postbox')
@@ -39,6 +40,7 @@
 
                                 </div>
 
+                                <div class="col-md-2 col-sm-12">
 
                                 @include('user.partials.sidebarhomepage')
                                 </div>
@@ -54,6 +56,7 @@
 
                             <div class="row">
 
+                                <div class="col-md-10">
 
                                     @include ('user.partials.postbox')
                                     @include ('user.partials.postbox')
@@ -62,6 +65,7 @@
 
                                 </div>
 
+                                <div class="col-md-2">
 
                                     @include('user.partials.sidebarhomepage')
                                 </div>
