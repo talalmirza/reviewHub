@@ -4,7 +4,7 @@
     <div class="container">
 
         <div class="row" style="margin-top: 2%;">
-            <div class="col-md-8 col-sm-8 col-xs-7 col-md-offset-1 col-sm-offset-1">
+            <div class="col-md-7 col-sm-7 col-xs-6 col-md-offset-1 col-sm-offset-1">
                 <div class="row" style="margin-top:6%;">
 
                     <div id="mobile-center">
@@ -14,14 +14,14 @@
                             <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
                             <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#" class="icoYoutube" title="Youtube"><i class="fa fa-youtube"></i></a></li>
+
                         </ul>
                     </div>
 
                 </div>
             </div>
 
-            <div class="col-md-3 col-sm-3 col-xs-5">
+            <div class="col-md-4 col-sm-4 col-xs-6">
 
                 <div class="text-center">
                     <img src="images/Logos/smallogo.png" style="height:70%;width:auto;">

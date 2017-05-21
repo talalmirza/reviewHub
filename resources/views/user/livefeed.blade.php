@@ -32,9 +32,16 @@
                             <div class="row">
 
 
-                                @include ('user.partials.postbox')
-                                @include ('user.partials.postbox')
-                                @include ('user.partials.postbox')
+                                    @include ('user.partials.postbox')
+                                    @include ('user.partials.postbox')
+                                    @include ('user.partials.postbox')
+                                    @include ('user.partials.postbox')
+
+                                </div>
+
+
+                                @include('user.partials.sidebarhomepage')
+                                </div>
 
                             </div>
                         </div>
@@ -48,9 +55,16 @@
                             <div class="row">
 
 
-                                @include ('user.partials.postbox')
-                                @include ('user.partials.postbox')
-                                @include ('user.partials.postbox')
+                                    @include ('user.partials.postbox')
+                                    @include ('user.partials.postbox')
+                                    @include ('user.partials.postbox')
+                                    @include ('user.partials.postbox')
+
+                                </div>
+
+
+                                    @include('user.partials.sidebarhomepage')
+                                </div>
 
                             </div>
                         </div>
