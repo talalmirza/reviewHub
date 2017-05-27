@@ -15,7 +15,7 @@ class CreatePasswordResetsTable extends Migration
             $table->timestamp('created_at')->nullable();
         });
     }
-
+// this is create password migration
     public function down()
     {
         Schema::dropIfExists('password_resets');
