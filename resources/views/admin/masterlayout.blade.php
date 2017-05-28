@@ -24,6 +24,8 @@
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
+
+    @yield ('custom-css');
 </head>
 
 @include ('admin.admin_partials._navbar_admin')
@@ -48,6 +50,7 @@
 <script src="js/portfolio-custom2.js"></script>
 <script src="js/main.js"></script>
 
+@yield ('custom-script');
 
 </body>
 
