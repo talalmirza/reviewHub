@@ -80,6 +80,17 @@ Route::get ('contact' , function(){
 
 });
 
+Route::get ('newpost' , function(){
+
+
+    return view ('admin.newpost');
+
+
+});
+
+
+
+
 ?>
 
 

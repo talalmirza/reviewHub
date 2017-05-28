@@ -21,7 +21,7 @@
 
                     <div class="row">
 
-                        <h4> &nbsp&nbsp Published Reviews &nbsp&nbsp <button type="button" class="btn btn-primary"> New Review</button> </h4>
+                        <h4> &nbsp&nbsp Published Reviews &nbsp&nbsp <a href="{{ url ('newpost') }}" style="color:white"><button type="button" class="btn btn-primary">New Review</button></a> </h4>
 
 
                     </div>
