@@ -88,6 +88,15 @@ Route::get ('newpost' , function(){
 
 });
 
+Route::get ('reviewerapply' , function(){
+
+
+    return view ('user.reviewerapply');
+
+
+});
+
+
 
 
 
