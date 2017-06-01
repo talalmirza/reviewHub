@@ -17,17 +17,17 @@ class CreateReviewersTable extends Migration
 
             $table->string('email')->unique();
             $table->string('first_name');
-            $table->string('last_name');
+            $table->string('last_name')->nullable();
             $table->string('avatar');
 
             $table->date('date_of_birth');
             $table->string('city');
             $table->string('region');
-            $table->integer('contact')->unsigned();
-            $table->binary('gender');
+            $table->bigInteger('contact')->unsigned()->nullable();
+            $table->boolean('gender');
 
             //-----------Below are reviewer functionality based columns
-            $table->integer('rating'); //1-5
+            $table->integer('rating')->default(0); //0,1-5
             $table->text('about')->nullable();
 
 
