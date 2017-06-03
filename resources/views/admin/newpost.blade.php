@@ -40,7 +40,9 @@
 
                         <textarea class="form-control" placeholder="Caption/Excerpt" name="review_caption" id="review_caption" rows=2></textarea>
                     </div>
+                    <br>
 
+                    <button type="submit" class="btn btn-block btn-success">Publish</button>
 
                 </div>
 
@@ -76,10 +78,9 @@
                                     <input class="form-control" type="text" placeholder="Enter Comma Separated Tags" name="post_tags">
                                 </div>
 
-                                <hr>
 
-                                <button type="submit" class="btn btn-success">Publish</button>
-                                <button type="submit" class="btn btn-primary">Save Draft</button>
+
+
 
 
                             </div>
