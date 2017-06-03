@@ -163,7 +163,7 @@
 
                                 <div class="col-md-5 form-group">
                                     <label>Contact</label>
-                                    <input type="text" class="form-control" name="contact" id="contact" placeholder="Your contact Number">
+                                    <input type="text" class="form-control" name="contact" id="contact">
                                 </div>
 
                                 <div class="col-md-4 form-group">
