@@ -24,7 +24,7 @@
             <div class="col-md-4 col-sm-4 col-xs-6">
 
                 <div class="text-center">
-                    <img src="images/Logos/smallogo.png" style="height:70%;width:auto;">
+                    <a href="{{ url('/') }}"> <img src="images/Logos/smallogo.png" style="height:70%;width:auto;"></a>
                 </div>
 
             </div>

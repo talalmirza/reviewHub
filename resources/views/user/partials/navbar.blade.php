@@ -8,7 +8,7 @@
             <div class="col-md-2 col-sm-2 col-md-offset-1 col-sm-offset-1">
 
                 <div class="text-center">
-                    <img src="images/Logos/navbarlogo.png" style="height:36px;">
+                    <a href="{{ url ('livefeed') }}"><img src="images/Logos/navbarlogo.png" style="height:36px;"></a>
                 </div>
             </div>
 
@@ -17,7 +17,10 @@
                 <div class="input-group col-md-12 col-sm-12 ">
 
                     <input type="text" class="form-control"  placeholder="Search">
-                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                    <span class="input-group-addon">
+
+                        <a href="#" class="glyphicon glyphicon-search" style="color:black;text-decoration: none;"></a>
+                    </span>
 
 
                 </div>
@@ -39,7 +42,7 @@
                         <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Logout</a>
+                        <li><a href="{{url ('/')}}">Logout</a>
                         </li>
                         <li><a href="{{ url ('profile') }}">Profile</a>
                         </li>
