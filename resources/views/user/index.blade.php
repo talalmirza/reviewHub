@@ -173,7 +173,7 @@
                         <div class="text-center"><h3 class="content-title">Join us</h3>
                             <h4>Do you have what it takes to be reviewer knight ?</h4>
                             <div class="text-center">
-                                <a href="#" class="btn btn-info button">Apply</a>
+                                <a href="{{ url ('reviewerapply') }}" class="btn btn-info button">Apply</a>
 
                             </div>
                         </div>

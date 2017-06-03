@@ -57,9 +57,6 @@
 
     <div class="page">
 
-        @include('user.partials.navbar')
-
-
         <div class="container">
 
 
@@ -67,7 +64,7 @@
             <div class="row">
 
                 <div class="text-center">
-<div class="well well-sm" style="margin-top:80px;background-color:#337ab6;color:white;border-radius: 15px;">
+<div class="well well-sm" style="background-color:#337ab6;color:white;border-radius: 15px;">
                         <h4><i>Want to be part of our Reviewer Team .. </i></h4>
 </div>
                 </div>
