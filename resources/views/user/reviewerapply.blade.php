@@ -35,6 +35,12 @@
                 width:100%;
                 height:auto;
             }
+
+
+            #avatar_button{
+
+                padding-left: 25%;
+            }
         }
 
 
@@ -44,6 +50,8 @@
                 width:50%;
                 height:auto;
             }
+
+
         }
 
 
@@ -57,39 +65,78 @@
 
     <div class="page">
 
-        <div class="container">
+        <header class="header8">
+
+            <div class="top_menubar row">
+
+
+                <div class="col-md-11 col-sm-11 col-xs-11">
+                    <div style="float:right;">
+                        <a class="btn btn-primary" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Log in</a>
+                        <a class="btn btn-primary" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Register</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+            @include ('user.partials.modal')
+            @include ('user.partials.mainbanner')
+
+        </header>
+
+
+        <div class="container" id="reviewer_apply">
 
 
 
             <div class="row">
 
-                <div class="text-center">
-<div class="well well-sm" style="background-color:#337ab6;color:white;border-radius: 15px;">
-                        <h4><i>Want to be part of our Reviewer Team .. </i></h4>
-</div>
-                </div>
+
 
                 <div class="col-md-8 col-md-offset-2">
                     <form action="" id="" method="post" onsubmit="" style="margin-bottom:5%">
                         <div class="row" >
 
 
-                            <div class="row">
+                            <div class="row" style="margin-top:25px;">
 
-                                <div class="col-md-3 col-sm-4 col-md-offset-9 col-sm-offset-8 text-center">
+                                <div class="col-md-7 col-sm-6">
+
+                                    <div class="text-center">
+                                        <div class="well well-sm" style="background-color:#337ab6;color:white;border-radius: 15px;">
+                                            <h4><i>Reviewer Application</i></h4>
+                                        </div>
+                                    </div>
+
+                                    <div style="padding-top:10px;">
+                                    <h5><i>Want to be part of ReviewHub ? An amazing portal where experienced writers share their reviews regarding different
+                                    things including food, technology, entertainement and much more for the people of Pakistan ... </i></h5>
+
+                                     </div>
+                                </div>
+
+                                <div class="col-md-4 col-md-offset-1 col-sm-5 col-sm-offset-1 text-center">
+
+
+
                                     <div class="form-group">
                                         <a href="#"> <img id='img-upload' src="/images/avatar.png"> </a>
 
                                     </div>
 
 
-                                    <div class="input-group col-md-2 col-sm-2 text-center">
+
+                                    <div class="input-group col-md-2 col-sm-2" id="avatar_button">
                                     <span class="input-group-btn ">
-                                        <span class="btn btn-default btn-file">
-                                            Choose Avatar <input type="file" id="imgInp">
-                                        </span>
+                                        <span class="btn btn-default btn-file">Choose Avatar<input type="file" id="imgInp"></span>
                                     </span>
                                     </div>
+
+
 
                                 </div>
 
@@ -291,4 +338,12 @@
             document.getElementById("citySelect").selectedIndex = 0;
         }
     </script>
+
+    <script>
+
+        $('html, body').animate({ scrollTop: $('#reviewer_apply').offset().top }, 'slow');
+
+    </script>
+
+
 @endsection
