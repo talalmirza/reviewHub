@@ -8,6 +8,7 @@
         .btn-file {
             position: relative;
             overflow: hidden;
+
         }
         .btn-file input[type=file] {
             position: absolute;
@@ -25,13 +26,18 @@
             display: block;
         }
 
+        .form-group{
+
+            padding-top: 5%;
+        }
+
         #img-upload{
             width: 100%;
             height:auto;
         }
     </style>
 
-    @endsection
+@endsection
 
 @section('content')
 
@@ -40,8 +46,12 @@
         @include('user.partials.navbar')
 
 
+        <br><br>
         <div class="container">
-            <h1>Edit Profile</h1>
+            <div style="padding-left: 5%">
+                <h2>Edit your Profile</h2>
+            </div>
+
             <hr>
             <div class="row">
 
@@ -58,7 +68,7 @@
 
                         <div class="input-group">
                             <span class="input-group-btn">
-                                <span class="btn btn-primary browse btn-file ">
+                                <span class="btn btn-primary browse btn-file " style="border-radius: 12px;">
 
                                       <i class="glyphicon glyphicon-search"></i> Browse <input type="file" id="imgInp">
                                  </span>
@@ -80,100 +90,128 @@
                         This is an <strong>.alert</strong>. Use this to show important messages to the user.
                     </div>
 
-                    <h3 class="text-center">Personal info</h3>
                     <br>
 
                     <form action="">
                         <div class="row">
 
-                            <div class="form-group">
-                                <label for="firstname">First Name</label>
-                                <input type="text" class="form-control" id="firstname" placeholder="First Name" name="firstname">
-                            </div>
-                            <div class="form-group">
-                                <label for="lastname">Last Name:</label>
-                                <input type="text" class="form-control" id="lastname" placeholder="Last Name" name="lastname">
-                            </div>
-                            <div class="form-group">
-                                <label for="username">User Name:</label>
-                                <input type="text" class="form-control" id="username" placeholder="User Name" name="username">
-                            </div>
-                            <div class="form-group">
-                                <label for="pwd">Change Password</label>
-                                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Update Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-                            </div>
 
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input disabled type="text" class="form-control" id="username" value=" /username01" name="username">
+                            </div>
 
 
                             <div class="row">
 
-                            <div class="col-md-6">
+                                {{--Left form column--}}
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="firstname">First name</label>
+                                        <input type="text" class="form-control" id="firstname" name="firstname">
+                                    </div>
 
-                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="pwd">New password</label>
+                                        <input type="password" class="form-control" id="password" name="password">
+                                    </div>
 
-                                <label>Select Region/Province</label>
-                                <select id="countrySelect" size="1" class="form-control" onchange="makeSubmenu(this.value)">
-
-                                    <option>Region/Province</option>
-                                    <option>Balochistan</option>
-                                    <option>Punjab</option>
-                                    <option>Khyber Pakhtunkhawa</option>
-                                    <option>Sindh</option>
-                                </select>
+                                    <div class="form-group">
+                                        <label for="email">Update Email</label>
+                                        <input type="email" class="form-control" id="email" name="email">
+                                    </div>
 
                                 </div>
 
+                                {{--Right form column--}}
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="lastname">Last name</label>
+                                        <input type="text" class="form-control" id="lastname" name="lastname">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="pwd">Retype new password</label>
+                                        <input type="password" class="form-control" id="retypepassword" name="retypepassword">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                        {{--End of form row1--}}
+
+                        {{--Start of form row2--}}
+                        <div class="row">
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Select Region/Province</label>
+
+                                        <select id="countrySelect" size="1" class="form-control" onchange="makeSubmenu(this.value)">
+                                            <option>Region/Province</option>
+                                            <option>Balochistan</option>
+                                            <option>Punjab</option>
+                                            <option>Khyber Pakhtunkhawa</option>
+                                            <option>Sindh</option>
+                                        </select>
+
+                                    </div>
                                 </div>
 
                                 <div class="col-md-6">
 
-
                                     <div class="form-group">
-
                                         <label>Select City</label>
-                                <select id="citySelect" size="1" class="form-control">
-                                    <option>Select City</option>
-                                </select>
+                                        <select id="citySelect" size="1" class="form-control">
+                                            <option>Select City</option>
+                                        </select>
 
+                                    </div>
                                 </div>
-                                </div>
-
 
                             </div>
 
-                                <div class="form-group">
+                            <div class="form-group">
 
+                                <label for="gender">Select Gender</label>
 
-                                    <label for="gender">Select Gender</label>
-
-
-                                    <div class="form-control form-inline">
+                                <div class="form-control form-inline">
 
                                     <input type="radio" id="gender" name="gender">&nbsp;&nbsp;Male&nbsp;&nbsp;
                                     <input type="radio" id="gender1" name="gender">&nbsp;&nbsp;Female
 
-
-                                    </div>
-
-                                    </div>
-
-
-                                <div class="form-group">
-
-                                    <label for="gender">Enter your Contact No.</label>
-                                    <input type="text" class="form-control" id="contact" placeholder="Contact Number" name="contact">
-                                </div>
-
-                                <div style="float:right">
-                                <button type="submit" class="btn btn-success">Save Changes</button>
                                 </div>
 
                             </div>
+
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+
+                                        <label for="gender">Enter your Contact No.</label>
+                                        <input type="number" class="form-control" id="contact" name="contact">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <br>
+                            <br>
+                            <div >
+                                <button type="submit" class="btn btn-block btn-primary"><b>Save Changes</b></button>
+                            </div>
+
+                        </div>
+                        {{--End of form row2--}}
+
                     </form>
+
                 </div>
             </div>
         </div>
@@ -184,7 +222,7 @@
     </div>
 
 
-    @endsection
+@endsection
 
 
 @section('custom-script')
@@ -192,14 +230,14 @@
         $(document).ready( function() {
             $(document).on('change', '.btn-file :file', function() {
                 var input = $(this),
-                        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
                 input.trigger('fileselect', [label]);
             });
 
             $('.btn-file :file').on('fileselect', function(event, label) {
 
                 var input = $(this).parents('.input-group').find(':text'),
-                        log = label;
+                    log = label;
 
                 if( input.length ) {
                     input.val(log);
