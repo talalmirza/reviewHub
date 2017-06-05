@@ -12,7 +12,7 @@
                 </div>
             </div>
 
-            <div class="col-md-5 col-sm-4 ccol-sm-offset-1 moblivefeednavmargin">
+            <div class="col-md-5 col-sm-4  moblivefeednavmargin">
 
                 <div class="input-group col-md-12 col-sm-12 ">
 

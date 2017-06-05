@@ -1,6 +1,21 @@
 @extends ('user.masterlayout')
 
+@section ('custom-css')
 
+    <style>
+    @media only screen and (max-width: 767px) {
+
+    #navtabs_row{
+
+    margin-top:50px;
+
+    }
+
+    }
+
+
+    </style>
+    @endsection
 
 @section ('content')
 
@@ -12,12 +27,12 @@
 
         <div class="container">
 
-            <div class="row">
+            <div class="row" id="navtabs_row">
 
                 <ul class="nav nav-tabs nav-justified" style="margin:3% 0 3%">
 
 
-                    <li role="presentation" class="active"><a data-toggle="tab" href="#livefeed">Livefeed</a></li>
+                    <li role="presentation" class="active" ><a data-toggle="tab" href="#livefeed">Livefeed</a></li>
                     <li role="presentation"><a data-toggle="tab" href="#subslist">Subscribed</a></li>
                     <li role="presentation"><a data-toggle="tab" href="#category_list">Categories</a></li>
 
@@ -31,18 +46,19 @@
 
                             <div class="row">
 
-                                <div class="col-md-10 col-sm-12">
+                                <div class="col-md-9 col-sm-8">
 
-                                    @include ('user.partials.postbox')
+                                @include ('user.partials.postbox')
                                     @include ('user.partials.postbox')
                                     @include ('user.partials.postbox')
                                     @include ('user.partials.postbox')
 
                                 </div>
 
-                                <div class="col-md-2 col-sm-12">
+                                <div class="col-md-3 col-sm-4 text-center" style="margin-top:10px;" >
 
                                 @include('user.partials.sidebarhomepage')
+
                                 </div>
 
                             </div>
@@ -56,7 +72,7 @@
 
                             <div class="row">
 
-                                <div class="col-md-10">
+                                <div class="col-md-9 col-sm-8">
 
                                     @include ('user.partials.postbox')
                                     @include ('user.partials.postbox')
@@ -65,7 +81,7 @@
 
                                 </div>
 
-                                <div class="col-md-2">
+                                <div class="col-md-3 col-sm-4 text-center" style="margin-top:10px;" >
 
                                     @include('user.partials.sidebarhomepage')
                                 </div>
