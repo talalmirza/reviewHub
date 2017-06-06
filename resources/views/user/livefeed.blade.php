@@ -24,7 +24,6 @@
 
         @include ('user.partials.navbar')
 
-
         <div class="container">
 
             <div class="row" id="navtabs_row">

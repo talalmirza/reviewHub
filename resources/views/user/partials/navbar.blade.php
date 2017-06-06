@@ -1,7 +1,8 @@
+
 <!-- header -->
 <header class="header8">
 
-<div class="row">
+
     <nav role="navigation" class="navbar navbar-inverse">
 
         <div class="container">
@@ -75,6 +76,7 @@
 
 
     </nav>
-</div>
+
 
 </header><!-- header -->
+
