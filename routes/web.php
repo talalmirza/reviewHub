@@ -15,6 +15,14 @@ Route::get ('/livefeed' , function(){
 });
 
 
+Route::get ('/search' , function(){
+
+
+    return view ('user.search');
+
+
+});
+
 
 Route::get ('profile' , function(){
 
