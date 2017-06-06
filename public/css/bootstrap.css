@@ -2464,6 +2464,13 @@ table th[class*="col-"] {
 }
 @media screen and (max-width: 767px) {
 
+  #usernvbar_search{
+
+    margin-left:20%;
+    width:60%
+
+
+  }
 
   .admin-login {
     background: url(../images/bg.jpg) no-repeat center center fixed;
@@ -4640,7 +4647,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-nav > li > .dropdown-menu {
-  margin-top: 0;
+
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
@@ -5207,6 +5214,14 @@ a.badge:focus {
         display: inline;
         margin: 0 5px;
     }
+
+  #usernvbar_search{
+
+    
+    width:60%
+
+
+  }
 
 
     /* footer social icons */
@@ -7148,6 +7163,11 @@ button.close {
   .moblivefeednavmargin {
     margin-top: 1%;
     margin-bottom: 1%;
+  }
+
+  .navbar-form{
+
+    margin-top: 0;
   }
 
 

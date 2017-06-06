@@ -1,57 +1,62 @@
 <!-- header -->
 <header class="header8">
 
+<div class="row">
+    <nav role="navigation" class="navbar navbar-inverse">
 
-    <nav role="navigation" class="navbar navbar-default">
-        <div class="row">
+        <div class="container">
 
-            <div class="col-md-2 col-sm-2 col-md-offset-1 col-sm-offset-1">
-
-                <div class="text-center">
-                    <a href="{{ url ('livefeed') }}"><img src="images/Logos/navbarlogo.png" style="height:36px;"></a>
-                </div>
-            </div>
-
-            <div class="col-md-5 col-sm-4  moblivefeednavmargin">
-
-                <div class="input-group col-md-12 col-sm-12 ">
-
-                    <input type="text" class="form-control"  placeholder="Search">
-                    <span class="input-group-addon">
-
-                        <a href="#" class="glyphicon glyphicon-search" style="color:black;text-decoration: none;"></a>
-                    </span>
+            <div class="navbar-header">
 
 
-                </div>
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="#"><img src="images/Logos/navbarlogo.png" style="height:34px;margin-top:-7px;"></a>
             </div>
 
 
+            <div class="collapse navbar-collapse" id="myNavbar">
+
+                <ul class="nav navbar-nav navbar-inverse navbar-right text-center">
+
+                    <li><a href="#"><img src="images/avatar.png" class="img-circle" style="width:25px;height:auto;"> &nbsp;&nbsp;Profile</a></li>
 
 
-            <div class="col-md-3 col-sm-3 col-xs-12 moblivefeednavmargin">
+                    <li class="dropdown ">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="glyphicon glyphicon-option-horizontal" style="font-size: 25px;"></span></a>
+                        <ul class="dropdown-menu">
+                            <a href="#" style="text-decoration: none"><li class="text-center">Logout</li></a>
+                            <hr>
+                            <a href="#" style="text-decoration: none"><li class="text-center">Contact Us</li></a>
+
+                        </ul>
+                    </li>
 
 
 
+                </ul>
 
-                <!-- Split button -->
-                <div class="btn-group btn-group-md" style="float:right;">
-                    <button type="button" class="btn btn-primary"><span class="fa fa-user">&nbsp;User</span></button>
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        <span class="caret"></span>
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="{{url ('/')}}">Logout</a>
-                        </li>
-                        <li><a href="{{ url ('profile') }}">Profile</a>
-                        </li>
-                        <li><a href="#">Settings</a>
-                        </li>
 
-                    </ul>
-                </div>
 
+                <form class="navbar-form navbar-inverse">
+
+
+                    <div class="input-group" id="usernvbar_search">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
 
 
 
@@ -62,7 +67,14 @@
             </div>
 
         </div>
-    </nav>
 
+
+
+
+
+
+
+    </nav>
+</div>
 
 </header><!-- header -->
