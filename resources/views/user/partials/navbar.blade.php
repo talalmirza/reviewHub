@@ -17,7 +17,7 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a class="navbar-brand" href="#"><img src="images/Logos/navbarlogo.png" style="height:34px;margin-top:-7px;"></a>
+                <a class="navbar-brand" href="{{ url ('livefeed') }}"><img src="images/Logos/navbarlogo.png" style="height:34px;margin-top:-7px;"></a>
             </div>
 
 
@@ -25,16 +25,16 @@
 
                 <ul class="nav navbar-nav navbar-inverse navbar-right text-center">
 
-                    <li><a href="#"><img src="images/avatar.png" class="img-circle" style="width:25px;height:auto;"> &nbsp;&nbsp;Profile</a></li>
+                    <li><a href="{{ url ('profile') }}"><img src="images/avatar.png" class="img-circle" style="width:25px;height:auto;"> &nbsp;&nbsp;Profile</a></li>
 
 
                     <li class="dropdown ">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <span class="glyphicon glyphicon-option-horizontal" style="font-size: 25px;"></span></a>
-                        <ul class="dropdown-menu">
-                            <a href="#" style="text-decoration: none"><li class="text-center">Logout</li></a>
+                        <ul class="dropdown-menu" style="background-color: #222222">
+                            <a href="#" style="text-decoration: none;color: white;"><li class="text-center" >Logout</li></a>
                             <hr>
-                            <a href="#" style="text-decoration: none"><li class="text-center">Contact Us</li></a>
+                            <a href="#" style="text-decoration: none;color: white;"><li class="text-center">Contact Us</li></a>
 
                         </ul>
                     </li>

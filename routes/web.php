@@ -23,6 +23,14 @@ Route::get ('/search' , function(){
 
 });
 
+Route::get ('/review' , function(){
+
+
+    return view ('user.reviewarticle');
+
+
+});
+
 
 Route::get ('profile' , function(){
 
