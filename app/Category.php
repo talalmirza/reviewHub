@@ -13,4 +13,10 @@ class Category extends Model
     {
         return $this->hasMany(Review::class);
     }
+
+    public function paladin()
+    {
+        return $this->belongsTo(Reviewer::class);
+    }
+
 }

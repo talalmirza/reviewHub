@@ -33,8 +33,8 @@ class ReviewersTableSeeder extends Seeder
                 'contact' => $faker->e164PhoneNumber,
                 'gender' => $faker->boolean,
                 'about' => $faker->realText,
-                'rank_id' => $faker->numberBetween($min = 0, $max = 4),
-                'rating' => $faker->numberBetween($min = 0, $max = 4)
+                'rank_id' => $faker->numberBetween($min = 1, $max = 5),
+                'rating' => $faker->numberBetween($min = 0, $max = 5)
             ));
         }
     }
