@@ -15,7 +15,9 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Visit Site<span class="sr-only">(current)</span></a></li>
-                <li><a href="{{ url ('newpost') }}">+ New</a></li>
+
+                <li><a href="{{url('review/create')}}">+ New</a></li>
+
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
