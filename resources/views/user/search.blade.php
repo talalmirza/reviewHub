@@ -177,7 +177,14 @@ img#food{
 
                         </div>
                     </div>
-                    <div class="col-md-2 col-sm-2"></div>
+                    <div class="col-md-2 col-sm-2">
+                        <div class="row" style="background-color: black">
+                            <div class="col-md-12 col-sm-12">
+                                <h3 style="color:white;">here should be something or delete this box and ignore other text</h3>
+                                <p style="color:white;">magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
