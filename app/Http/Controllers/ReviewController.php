@@ -10,6 +10,9 @@ class ReviewController extends Controller
     public function index()
     {
 
+        $posts = Post::latest()->get();
+        return View('posts.index',compact('posts'));
+
     }
 
     public function create()
@@ -22,12 +25,10 @@ class ReviewController extends Controller
 
     {
 
-
-
         //Validate Data
         $this->validate($request, [
             'title' => 'required',
-            'review_content' => 'required',
+            'body' => 'required',
         ]);
 
         $review = new Review();
@@ -35,14 +36,12 @@ class ReviewController extends Controller
         $review->caption = $request->caption;
         $review->body = $request->body;
         $review->category_id = $request->category_id;
-        $review->reviewer_id = $request->reviewer_id ;
+        $review->reviewer_id = $request->reviewer_id;
 
         $review->save();
 
         //$post = $request->all();
-
         //Review::create($post);
-
 
         return view ('admin.posts');
 
