@@ -3,7 +3,7 @@
 @section ('custom-css')
 
     <style>
-    @media only screen and (max-width: 767px) {
+        @media only screen and (max-width: 767px) {
 
     #navtabs_row{
 
@@ -31,7 +31,7 @@
                 <ul class="nav nav-tabs nav-justified" style="margin:3% 0 3%">
 
 
-                    <li role="presentation" class="active" ><a data-toggle="tab" href="#home">Livefeed</a></li>
+                    <li role="presentation" class="active" ><a data-toggle="tab" href="#livefeed">Livefeed</a></li>
                     <li role="presentation"><a data-toggle="tab" href="#subslist">Subscribed</a></li>
                     <li role="presentation"><a data-toggle="tab" href="#category_list">Categories</a></li>
 
@@ -39,7 +39,7 @@
                 <div class="tab-content">
 
 
-                    <div id="home" class="tab-pane fade in active">
+                    <div id="livefeed" class="tab-pane fade in active">
 
                         <div class="container" >
 
@@ -106,7 +106,7 @@
             </div>
             <br>
         </div>
-
+    </div>
     @endsection
 
 
@@ -133,7 +133,7 @@
  </script>
 
     <script>
-        $(function(){
+        $(function() {
             var hash = window.location.hash;
             hash && $('ul.nav a[href="' + hash + '"]').tab('show');
 
@@ -143,6 +143,7 @@
                 window.location.hash = this.hash;
                 $('html,body').scrollTop(scrollmem);
             })
+        });
 
 
     </script>
