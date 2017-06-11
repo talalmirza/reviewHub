@@ -23,8 +23,8 @@ class ReviewController extends Controller
     public function index()
     {
 
-        //$posts = Post::latest()->get();
-        //return View('posts.index',compact('posts'));
+        $review = Review::latest()->get();
+        return View('admin.posts',compact('review'));
 
     }
 
@@ -68,13 +68,9 @@ class ReviewController extends Controller
             $review->featureimage=$url;
 
         }
-        
+
 
         $review->save();
-
-
-
-
 
 
 
@@ -110,14 +106,14 @@ class ReviewController extends Controller
     public function show(Review $review)
     {
 
-
-
         return view('user.reviewarticle',compact('review'));
     }
 
 
     public function edit(Review $review)
     {
+
+        
 
     }
 

@@ -13,8 +13,8 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <div class="page-header">
-                        <h1>Blog post title</h1>
-                        <p>Posted by <span class="glyphicon glyphicon-user"></span> <a href="#">Reviewer</a> on <span class="glyphicon glyphicon-time"></span> Time Span</p>
+                        <h1>{{ $review->title }}</h1>
+                        <p>Posted by <span class="glyphicon glyphicon-user"></span> <a href="#">{{ $review->reviewer->first_name . ' ' . $review->reviewer->last_name }}</a> on <span class="glyphicon glyphicon-time"></span> {{ $review->created_at->toFormattedDateString() }} in <span class="glyphicon glyphicon-book"></span> {{ $review->category->name }} </p>
                     </div>
                 </div>
             </div>
@@ -32,12 +32,14 @@
 
                     </div>
 
+                    <br>
+                    <p class="lead">{{$review->caption}}</p>
 
-                    <p class="lead">Lorem ipsum dolor sit amet consect etuer adipi scing elit sed diam nonummy nibh euismod tinunt ut laoreet dolore magna aliquam erat volut. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.</p>
-                    <p>Vivamus risus ex, varius et libero quis, placerat rhoncus mi. Aenean sit amet aliquam nibh. Aliquam tortor est, consequat vitae libero at, vehicula mattis tellus. In condimentum consequat tempor. Nullam at lorem semper, ultricies mi et, mollis turpis. Mauris ut leo ac magna dapibus luctus. Mauris mi nibh, ornare et ipsum vel, finibus molestie nulla. Nunc eleifend leo eget ipsum pellentesque, vel varius ipsum placerat. Mauris tincidunt sapien et efficitur commodo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec at pellentesque arcu. Pellentesque justo enim, porttitor a arcu non, mollis venenatis felis.</p>
-                    <p>Praesent viverra pellentesque enim, vitae porta erat elementum quis. Maecenas posuere mattis velit rutrum iaculis. Duis non efficitur nibh. Aliquam laoreet risus a nulla auctor interdum. Ut cursus leo eu justo laoreet porttitor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse vitae nisi dictum, vulputate odio sed, blandit tortor. Fusce eu turpis ut mi porta bibendum nec eu libero.</p>
-                    <p>Praesent libero sem, feugiat dapibus mattis et, vehicula eu turpis. In vitae consequat leo, quis venenatis justo. Fusce auctor bibendum aliquet. Nullam eu mi lectus. Maecenas risus mauris, feugiat nec ullamcorper non, efficitur et elit. Sed porta tellus ut aliquam auctor. Vivamus id lectus sed tellus cursus sodales sit amet a velit.</p>
-                    <p>Quisque eu aliquam leo. Sed feugiat nulla massa, a faucibus nulla sagittis eget. Donec ullamcorper tincidunt risus et pharetra. Vivamus tristique dui metus, vitae gravida nisl volutpat eu. Vivamus dapibus leo sit amet metus luctus dapibus. Vivamus sodales tempor elit, at pellentesque elit eleifend sit amet. Aliquam erat volutpat.</p>
+
+
+                       {!! $review->body !!}
+
+
                     <hr>
 
                     <!-- Comment form -->
@@ -56,11 +58,11 @@
                     <!-- Panel -->
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h4 class="panel-title">About Reviewer</h4>
+                            <h4 class="panel-title">Reviewer - {{ $review->reviewer->first_name . ' ' . $review->reviewer->last_name }}</h4>
                         </div>
                         <div class="panel-body">
-                            <p>Reviewer Description Reviewer Description Reviewer Description Reviewer Description
-                                Reviewer Description Reviewer Description Reviewer Description Reviewer Description Reviewer Description</p>
+                            <label>About {{  $review->reviewer->first_name }}</label>
+                            <p>{{ $review->reviewer->about }}</p>
                         </div>
                     </div>
 
