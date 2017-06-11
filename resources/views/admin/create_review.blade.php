@@ -64,7 +64,7 @@
             <div class="row dashrow1">
 
 
-                <form action="{{ route('review.store') }}" method="POST">
+                <form action="{{ route('review.store') }}" enctype="multipart/form-data" method="POST">
 
                     {{ csrf_field() }}
 
@@ -125,6 +125,14 @@
 
                                     <hr>
 
+
+                                    {{--<div class="form-group">--}}
+
+                                        {{--<label>Upload Feature Image</label>--}}
+                                        {{--<input class="form-control" type="file" placeholder="imgInp" name="imgInp">--}}
+                                    {{--</div>--}}
+
+
                                     <label>Select Feature Image</label>
                                     <div class="text-center"  style="margin-bottom: 10px;">
 
@@ -137,14 +145,14 @@
                             <span class="input-group-btn">
                                 <span class="btn btn-primary browse btn-file " style="border-radius: 12px;">
 
-                                      <i class="glyphicon glyphicon-search"></i> Browse <input type="file" id="imgInp" name="imgInp">
+                                      <i class="glyphicon glyphicon-search"></i> Browse <input type="file" id="imgInp" name="imgInp" accept="image/*">
                                  </span>
                              </span>
                                         </div>
 
 
-                                    </div>
 
+                                </div>
 
 
 
@@ -195,42 +203,42 @@
     </script>
 
 
-    <script>
-        $(document).ready( function() {
-            $(document).on('change', '.btn-file :file', function() {
-                var input = $(this),
-                        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-                input.trigger('fileselect', [label]);
-            });
+    {{--<script>--}}
+        {{--$(document).ready( function() {--}}
+            {{--$(document).on('change', '.btn-file :file', function() {--}}
+                {{--var input = $(this),--}}
+                        {{--label = input.val().replace(/\\/g, '/').replace(/.*\//, '');--}}
+                {{--input.trigger('fileselect', [label]);--}}
+            {{--});--}}
 
-            $('.btn-file :file').on('fileselect', function(event, label) {
+{{--//            $('.btn-file :file').on('fileselect', function(event, label) {--}}
+{{--//--}}
+{{--//                var input = $(this).parents('.input-group').find(':text'),--}}
+{{--//                        log = label;--}}
+{{--//--}}
+{{--//                if( input.length ) {--}}
+{{--//                    input.val(log);--}}
+{{--//                } else {--}}
+{{--//                    if( log ) alert(log);--}}
+{{--//                }--}}
+{{--//--}}
+{{--//            });--}}
+            {{--function readURL(input) {--}}
+                {{--if (input.files && input.files[0]) {--}}
+                    {{--var reader = new FileReader();--}}
 
-                var input = $(this).parents('.input-group').find(':text'),
-                        log = label;
+                    {{--reader.onload = function (e) {--}}
+                        {{--$('#img-upload').attr('src', e.target.result);--}}
+                    {{--}--}}
 
-                if( input.length ) {
-                    input.val(log);
-                } else {
-                    if( log ) alert(log);
-                }
+                    {{--reader.readAsDataURL(input.files[0]);--}}
+                {{--}--}}
+            {{--}--}}
 
-            });
-            function readURL(input) {
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
-
-                    reader.onload = function (e) {
-                        $('#img-upload').attr('src', e.target.result);
-                    }
-
-                    reader.readAsDataURL(input.files[0]);
-                }
-            }
-
-            $("#imgInp").change(function(){
-                readURL(this);
-            });
-        });
-    </script>
+            {{--$("#imgInp").change(function(){--}}
+                {{--readURL(this);--}}
+            {{--});--}}
+        {{--});--}}
+    {{--</script>--}}
 
     @endsection

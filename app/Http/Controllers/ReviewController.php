@@ -3,9 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+
+
+
 use App\Review;
 use App\Category;
 use App\Tag;
+use App\ReviewImage;
+
 use Session;
 use Purifier;
 use Image;
@@ -34,6 +41,7 @@ class ReviewController extends Controller
 
     {
 
+
         //Validate Data
         $this->validate($request, [
             'title' => 'required',
@@ -47,7 +55,35 @@ class ReviewController extends Controller
         $review->category_id = $request->category_id;
         $review->reviewer_id = 1;
 
+
+
+
         $review->save();
+
+
+        if ($request->hasFile('imgInp')) {
+
+            $review_image = new ReviewImage();
+
+
+            $image      = $request->file('imgInp');
+            $fileName   = time() . '.' . $image->getClientOriginalExtension();
+
+            Storage::disk('local')->put($fileName, File::get($image));
+
+            $url = Storage::url($fileName);
+
+
+             $review_image->image=$url;
+             $review_image->review_id=$review->id;
+
+            $review_image->save();
+
+
+        }
+
+
+
 
 
         if($review)
@@ -69,6 +105,8 @@ class ReviewController extends Controller
                 }
 
             }
+
+
             $review->tags()->sync($tagIds);
         }
 
@@ -80,8 +118,10 @@ class ReviewController extends Controller
     public function show($id)
     {
 
-        //$review = Review::find($id);
-        //return view('posts.show')->withPost($review);
+        $review = Review::find($id);
+        $review_image_url = $review->reviewImages->pluck('image');
+        
+        return view('user.reviewarticle',compact($review,$review_image_url));
     }
 
 

@@ -26,7 +26,10 @@
                 <div class="col-md-9 col-sm-8">
 
                     <div class="text-center" >
-                        <img src="http://placehold.it/900x400" alt="" style="width:100%;height:auto;">
+
+
+                        <?php dd ($review_image_url);exit; ?>
+                        <img src="{{ URL::asset($review_image_url) }}" alt="" style="width:100%;height:auto;">
                     </div>
 
 
