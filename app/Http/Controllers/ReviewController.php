@@ -115,13 +115,16 @@ class ReviewController extends Controller
 
     }
 
-    public function show($id)
+    public function show(Review $review)
     {
 
-        $review = Review::find($id);
+
         $review_image_url = $review->reviewImages->pluck('image');
+
+        $review_image_url = stripslashes($review_image_url);
         
-        return view('user.reviewarticle',compact($review,$review_image_url));
+       // dd($review_image_url[0]);exit;
+        return view('user.reviewarticle',compact('review_image_url'));
     }
 
 

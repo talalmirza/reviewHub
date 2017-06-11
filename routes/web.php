@@ -101,7 +101,10 @@ Route::get ('reviewerapply' , function(){
 
 
 
-Route::resource ('review','ReviewController');
+Route::resource ('/review','ReviewController');
+
+
+
 
 
 

@@ -27,9 +27,9 @@
 
                     <div class="text-center" >
 
+                        <img src="#" alt="" style="width:100%;height:auto;">
 
-                        <?php dd ($review_image_url);exit; ?>
-                        <img src="{{ URL::asset($review_image_url) }}" alt="" style="width:100%;height:auto;">
+
                     </div>
 
 
@@ -78,7 +78,7 @@
         <!-- /.container-fluid -->
 
         <br>
-
+    </div>
     @endsection
 
 
@@ -105,7 +105,7 @@
  </script>
 
     <script>
-        $(function(){
+        $(function() {
             var hash = window.location.hash;
             hash && $('ul.nav a[href="' + hash + '"]').tab('show');
 
@@ -114,7 +114,8 @@
                 var scrollmem = $('body').scrollTop() || $('html').scrollTop();
                 window.location.hash = this.hash;
                 $('html,body').scrollTop(scrollmem);
-            })
+            });
+        });
 
 
     </script>
