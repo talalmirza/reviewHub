@@ -4,7 +4,7 @@
 
         <div class="media-left media-middle">
 
-            <img src="images/vetors/12-512.png" class="media-object" style="width:150px;height:auto;">
+            <img src="images/vectors/12-512.png" class="media-object" style="width:150px;height:auto;">
 
         </div>
 

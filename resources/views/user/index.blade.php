@@ -117,7 +117,7 @@
                     <div class="col-md-4">
                         <div class="text-center single-content">
                             <!-- Clip image with an oval -->
-                            <img src="images/vetors/256-256-d13cafbf17ecd8f2065c8842a6e4e228.png" alt="..." class="img-rounded">
+                            <img src="images/vectors/256-256-d13cafbf17ecd8f2065c8842a6e4e228.png" alt="..." class="img-rounded">
 
 
                             <h3>Food</h3>
@@ -128,7 +128,7 @@
                     <div class="col-md-4">
                         <div class="text-center single-content">
                             <!-- Clip image with an oval -->
-                            <img src="images/vetors/Movie alt 512x512.png" alt="..." class="img-rounded">
+                            <img src="images/vectors/Movie alt 512x512.png" alt="..." class="img-rounded">
 
 
                             <h3>Movies</h3>
@@ -141,7 +141,7 @@
 
                             <br>
                             <!-- Clip image with an oval -->
-                            <img src="images/vetors/desktop-computer-with-screen-vector-icon-800x566.png" alt="..." class="img-rounded">
+                            <img src="images/vectors/desktop-computer-with-screen-vector-icon-800x566.png" alt="..." class="img-rounded">
 
 
                             <h3>Computers & Hardwares</h3>
