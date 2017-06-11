@@ -18,7 +18,7 @@ class CreateReviewsTable extends Migration
             $table->text('title');
             $table->text('caption');
             $table->longText('body');
-
+            $table->text('featureimage')->nullable();
             $table->smallInteger('category_id');
             $table->integer('reviewer_id');
             $table->timestamps();

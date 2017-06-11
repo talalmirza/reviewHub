@@ -28,11 +28,6 @@ class Review extends Model
         return $this->hasMany(Like::class);
     }
 
-    public function reviewImages()
-    {
-        return $this->hasMany(ReviewImage::class);
-    }
-
     public function reviewer()
     {
         return $this->belongsTo(Reviewer::class);

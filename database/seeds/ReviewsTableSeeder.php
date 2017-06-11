@@ -23,6 +23,7 @@ class ReviewsTableSeeder extends Seeder
                 'title' => $faker->realText($faker->numberBetween(10,20)),
                 'caption' => $faker->realText($faker->numberBetween(10,20)),
                 'body' => $faker->realText,
+                'featureimage' => $faker->imageUrl($width = 640, $height = 480),
                 'category_id' => $faker->numberBetween($min = 1, $max = 5),
                 'reviewer_id' => $faker->numberBetween($min = 1, $max = 5),
 

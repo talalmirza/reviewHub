@@ -4,8 +4,7 @@
     @foreach($categories as $category)
 
         @include('user.partials.categorybadge')
-        <br><br>
-        <br>
+
 
     @endforeach
 

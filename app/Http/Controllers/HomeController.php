@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Review;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +15,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+        $review = Review::latest()->get();
+        $subreview = Review::latest()->whereIn('reviewer_id', [2,5,6])->get();
+        return View('user.home',compact('categories','review','subreview'));
     }
 
     /**
