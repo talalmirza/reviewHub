@@ -17,7 +17,7 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a class="navbar-brand" href="{{ url ('livefeed') }}"><img src="images/Logos/navbarlogo.png" style="height:34px;margin-top:-7px;"></a>
+                <a class="navbar-brand" href="{{ url ('home') }}"><img src="images/Logos/navbarlogo.png" style="height:34px;margin-top:-7px;"></a>
             </div>
 
 

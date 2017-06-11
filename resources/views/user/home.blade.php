@@ -31,7 +31,7 @@
                 <ul class="nav nav-tabs nav-justified" style="margin:3% 0 3%">
 
 
-                    <li role="presentation" class="active" ><a data-toggle="tab" href="#livefeed">Livefeed</a></li>
+                    <li role="presentation" class="active" ><a data-toggle="tab" href="#home">Livefeed</a></li>
                     <li role="presentation"><a data-toggle="tab" href="#subslist">Subscribed</a></li>
                     <li role="presentation"><a data-toggle="tab" href="#category_list">Categories</a></li>
 
@@ -39,7 +39,7 @@
                 <div class="tab-content">
 
 
-                    <div id="livefeed" class="tab-pane fade in active">
+                    <div id="home" class="tab-pane fade in active">
 
                         <div class="container" >
 

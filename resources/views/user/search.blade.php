@@ -45,7 +45,7 @@ img#food{
                             <div class="row">
                             <div class="col-md-12 col-sm-12" style="padding-bottom: 20px;">
                                 <ul class="nav nav-tabs nav-stacked" id="nav"style="background-color: #0F0F0F;border-bottom: 0px">
-                                    <li role="presentation" id="dash"class="active" ><a style="border-top-width: 0px;border-radius: 15px;border-left-width: 0px;" id="everything" data-toggle="tab" href="#livefeed">Everything<span id="span" style="font-size:  small; left:51%" class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a></li>
+                                    <li role="presentation" id="dash"class="active" ><a style="border-top-width: 0px;border-radius: 15px;border-left-width: 0px;" id="everything" data-toggle="tab" href="#home">Everything<span id="span" style="font-size:  small; left:51%" class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a></li>
                                     <li role="presentation"id="dash"><a style="border-top-width: 0px;border-radius: 25px;border-left-width: 0px;" id="sub"data-toggle="tab" href="#subslist">Posts<span id="span" style="font-size: small; left:70%" class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a></li>
                                     <li role="presentation"id="dash"><a style="border-top-width: 0px;border-radius: 25px;border-left-width: 0px;"id="sub" data-toggle="tab" href="#category_list">Tags<span id="span" style="font-size: small; left:73%" class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a></li>
                                 </ul>
@@ -57,7 +57,7 @@ img#food{
                         <div class="tab-content">
 
 
-                            <div id="livefeed" class="tab-pane fade in active">
+                            <div id="home" class="tab-pane fade in active">
                                 <div class="row">
                                     <div class="col-md-12 col-sm-12" style="margin-bottom: 30px;">
                                     <!-- Media middle -->
@@ -193,7 +193,7 @@ img#food{
                         <div class="row">
                             <div class="col-md-12 col-sm-12" style="padding-bottom: 20px;">
                                 <ul class="nav nav-tabs nav-stacked" id="nav"style="background-color: #0F0F0F;border-bottom: 0px">
-                                    <li role="presentation" id="dash"class="active" ><a style="border-top-width: 0px;border-radius: 15px;border-left-width: 0px;" id="everything" data-toggle="tab" href="#livefeed">Everything<span id="span" style="font-size:  small; left:52%" class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a></li>
+                                    <li role="presentation" id="dash"class="active" ><a style="border-top-width: 0px;border-radius: 15px;border-left-width: 0px;" id="everything" data-toggle="tab" href="#home">Everything<span id="span" style="font-size:  small; left:52%" class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a></li>
                                     <li role="presentation"id="dash"><a style="border-top-width: 0px;border-radius: 25px;border-left-width: 0px;" id="sub"data-toggle="tab" href="#subslist">Posts<span id="span" style="font-size: small; left:70%" class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a></li>
                                     <li role="presentation"id="dash"><a style="border-top-width: 0px;border-radius: 25px;border-left-width: 0px;"id="sub" data-toggle="tab" href="#category_list">Tags<span id="span" style="font-size: small; left:73%" class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a></li>
                                 </ul>
@@ -205,7 +205,7 @@ img#food{
                     <div class="tab-content">
 
 
-                        <div id="livefeed" class="tab-pane fade in active">
+                        <div id="home" class="tab-pane fade in active">
                             <div class="col-md-12 col-sm-12" style="margin-bottom: 30px;">
                                 <!-- Media middle -->
                                 <div class="media">

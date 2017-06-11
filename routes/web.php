@@ -2,14 +2,14 @@
 
 Route::get('/', function(){
 
-    return view('user.index');
+    return view('user.landingpage');
 });
 
 
-Route::get ('/livefeed' , function(){
+Route::get ('/home' , function(){
 
 
-    return view ('user.livefeed');
+    return view ('user.home');
 
 
 });
@@ -51,10 +51,10 @@ Route::get ('dashboard' , function(){
 });
 
 
-Route::get ('livefeed#category_list' , function(){
+Route::get ('home#category_list' , function(){
 
 
-    return view ('user.livefeed');
+    return view ('user.home');
 
 
 });

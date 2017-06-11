@@ -158,7 +158,7 @@
 
                 </div><!-- end row -->
 
-                <a href="{{ url ('livefeed#category_list') }}" type="button" class="btn btn-info" style="float:right;">More Categories</a>
+                <a href="{{ url ('home#category_list') }}" type="button" class="btn btn-info" style="float:right;">More Categories</a>
 
 
             </div><!-- end container -->
