@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->command->info('5 Visitors table seeded!');
 
         $this->call(CategoriesTableSeeder::class);
-        $this->command->info('5 Categories table seeded!');
+        $this->command->info('6 Hardcoded with vector images Categories table seeded!');
 
         $this->call(CommentsTableSeeder::class);
         $this->command->info('5 Comments table seeded!');

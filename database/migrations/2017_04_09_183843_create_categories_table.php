@@ -13,7 +13,7 @@ class CreateCategoriesTable extends Migration
             $table->smallIncrements('id')->unsigned()->unique();
             $table->string('name')->unique();
             $table->integer('paladin_id');
-            $table->string('vector_url');
+            $table->string('vector');
         });
     }
 

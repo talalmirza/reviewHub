@@ -17,12 +17,41 @@ class CategoriesTableSeeder extends Seeder
         $faker = Faker::create('en_US');
 
 
-        foreach (range(1, 5) as $index) {
+        Category::create(array(
+            'name' => 'Food',
+            'paladin_id' => $faker->numberBetween($min = 1, $max = 5),
+            'vector' => '256-256-d13cafbf17ecd8f2065c8842a6e4e228.png'
+        ));
 
-            Category::create(array(
-                'name' => $faker->unique()->randomElement($array = array('Food','Movies', 'Mobile', 'Electronics','Music')),
-                'paladin_id' => $faker->numberBetween($min = 1, $max = 5),
-            ));
-        }
+        Category::create(array(
+            'name' => 'Movies',
+            'paladin_id' => $faker->numberBetween($min = 1, $max = 5),
+            'vector' => 'Movie alt 512x512.png'
+        ));
+
+        Category::create(array(
+            'name' => 'Music',
+            'paladin_id' => $faker->numberBetween($min = 1, $max = 5),
+            'vector' => 'music.png'
+        ));
+
+        Category::create(array(
+            'name' => 'Mobile',
+            'paladin_id' => $faker->numberBetween($min = 1, $max = 5),
+            'vector' => 'smartphone_318-33441.png'
+        ));
+
+        Category::create(array(
+            'name' => 'PC/Laptop',
+            'paladin_id' => $faker->numberBetween($min = 1, $max = 5),
+            'vector' => 'laptop-png-6749.png'
+        ));
+
+        Category::create(array(
+            'name' => 'Electronics',
+            'paladin_id' => $faker->numberBetween($min = 1, $max = 5),
+            'vector' => 'desktop-computer-with-screen-vector-icon-800x566.png'
+        ));
+
     }
 }

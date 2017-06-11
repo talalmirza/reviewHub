@@ -10,6 +10,10 @@
 
     <!-- Loading Bootstrap -->
     <link href="/css/bootstrap.css" rel="stylesheet">
+
+    {{--W3 CSS--}}
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
     <!-- Edit CSS -->
     <link href="/css/default.css" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">

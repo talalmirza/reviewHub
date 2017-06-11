@@ -6,13 +6,8 @@ Route::get('/', function(){
 });
 
 
-Route::get ('/home' , function(){
+Route::get ('/home' , 'CategoryController@index');
 
-
-    return view ('user.home');
-
-
-});
 
 
 Route::get ('/search' , function(){
@@ -51,15 +46,7 @@ Route::get ('dashboard' , function(){
 });
 
 
-Route::get ('home#category_list' , function(){
-
-
-    return view ('user.home');
-
-
-});
-
-
+Route::get ('home#category_list' ,'CategoryController@index');
 
 Route::get ('posts' , function(){
 

@@ -10,7 +10,8 @@ class CategoryController extends Controller
 
     public function index()
     {
-
+        $categories = Category::all();
+        return View('user.home',compact('categories'));
     }
 
     public function create()
