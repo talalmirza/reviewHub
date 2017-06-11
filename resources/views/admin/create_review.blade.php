@@ -82,14 +82,81 @@
                         <textarea class="form-control" placeholder="Caption/Excerpt" name="caption" id="caption" rows=2></textarea>
                     </div>
 
-                    <input type="text" class="form-control" placeholder="Title of article/review ..." name="category_id" id="category_id">
-                    <input type="text" class="form-control" placeholder="Title of article/review ..." name="reviewer_id" id="reviewer_id">
-
-
-                    <br>
 
                 </div>
 
+
+                    <div class="col-md-3 col-sm-4">
+
+                        <div class="text-center" style="margin-top:10px;">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">Post Options</div>
+
+                                <div class="panel-body">
+
+                                    <div class="form-group">
+
+                                        <label>Reviewer</label>
+                                        <input class="form-control" type="text" placeholder="Reviewer Name" name="reviewer_id" disabled>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="category_id">Select list:</label>
+                                        <select class="form-control" name="category_id">
+                                            <option>Select Category</option>
+
+                                          @foreach( $categories as $category)
+
+                                                <option value="{{ $category->id }}"> {{ $category->name }} </option>
+
+                                              @endforeach
+
+                                        </select>
+
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="form-group">
+
+                                        <label>Enter Tags</label>
+                                        <input class="form-control" type="text" placeholder="Enter Comma Separated Tags" name="post_tags">
+                                    </div>
+
+                                    <hr>
+
+                                    <label>Select Feature Image</label>
+                                    <div class="text-center"  style="margin-bottom: 10px;">
+
+                                        <div class="form-group ">
+                                            <a href="#"><img id='img-upload' name='img-upload' src="{{ asset('images/vectors/img_icon.png') }}" style="width:70%;height: auto;"></a>
+
+                                        </div>
+
+                                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <span class="btn btn-primary browse btn-file " style="border-radius: 12px;">
+
+                                      <i class="glyphicon glyphicon-search"></i> Browse <input type="file" id="imgInp" name="imgInp">
+                                 </span>
+                             </span>
+                                        </div>
+
+
+                                    </div>
+
+
+
+
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
 
 
 

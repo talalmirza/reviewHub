@@ -20,7 +20,7 @@
 @section ('content')
 
 
-    <div class="page">
+    <div class="page" >
 
         @include ('user.partials.navbar')
 
@@ -106,8 +106,6 @@
             </div>
             <br>
         </div>
-
-        <br>
 
     @endsection
 

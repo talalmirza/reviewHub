@@ -2,23 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\Review;
 use Illuminate\Http\Request;
+use App\Review;
+use App\Category;
+use App\Tag;
+use Session;
+use Purifier;
+use Image;
+
+
 
 class ReviewController extends Controller
 {
     public function index()
     {
 
-        $posts = Post::latest()->get();
-        return View('posts.index',compact('posts'));
+        //$posts = Post::latest()->get();
+        //return View('posts.index',compact('posts'));
 
     }
 
     public function create()
     {
+        $categories = Category::all();
+        $tags = Tag::all();
+        return view('admin.create_review')->withCategories($categories)->withTags($tags);
 
-        return view ('admin.create_review');
     }
 
     public function store(Request $request)
@@ -36,22 +45,45 @@ class ReviewController extends Controller
         $review->caption = $request->caption;
         $review->body = $request->body;
         $review->category_id = $request->category_id;
-        $review->reviewer_id = $request->reviewer_id;
+        $review->reviewer_id = 1;
 
         $review->save();
 
-        //$post = $request->all();
-        //Review::create($post);
+
+        if($review)
+        {
+            $tagNames = explode(',', $request->post_tags);
+            $tagIds = [];
+
+            foreach($tagNames as $tagName)
+            {
+                //$post->tags()->create(['name'=>$tagName]);
+                //Or to take care of avoiding duplication of Tag
+                //you could substitute the above line as
+
+                $tag = Tag::firstOrCreate(['name'=>$tagName]);
+
+                if($tag)
+                {
+                    $tagIds[] = $tag->id;
+                }
+
+            }
+            $review->tags()->sync($tagIds);
+        }
 
         return view ('admin.posts');
 
 
     }
 
-    public function show(Review $review)
+    public function show($id)
     {
 
+        //$review = Review::find($id);
+        //return view('posts.show')->withPost($review);
     }
+
 
     public function edit(Review $review)
     {
