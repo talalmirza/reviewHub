@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\File;
 use App\Review;
 use App\Category;
 use App\Tag;
-use App\ReviewImage;
 
 use Session;
 use Purifier;
@@ -55,15 +54,7 @@ class ReviewController extends Controller
         $review->category_id = $request->category_id;
         $review->reviewer_id = 1;
 
-
-
-
-        $review->save();
-
-
         if ($request->hasFile('imgInp')) {
-
-            $review_image = new ReviewImage();
 
 
             $image      = $request->file('imgInp');
@@ -74,13 +65,14 @@ class ReviewController extends Controller
             $url = Storage::url($fileName);
 
 
-             $review_image->image=$url;
-             $review_image->review_id=$review->id;
-
-            $review_image->save();
-
+            $review->featureimage=$url;
 
         }
+        
+
+        $review->save();
+
+
 
 
 
@@ -119,12 +111,8 @@ class ReviewController extends Controller
     {
 
 
-        $review_image_url = $review->reviewImages->pluck('image');
 
-        $review_image_url = stripslashes($review_image_url);
-        
-       // dd($review_image_url[0]);exit;
-        return view('user.reviewarticle',compact('review_image_url'));
+        return view('user.reviewarticle',compact('review'));
     }
 
 
