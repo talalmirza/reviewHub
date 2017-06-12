@@ -194,7 +194,7 @@ class ReviewController extends Controller
     public function destroy(Review $review)
     {
 
-        $review->delete();
+        Review::destroy($review->id);
 
         return redirect()->route('review.index');
     }
