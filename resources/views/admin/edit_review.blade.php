@@ -99,7 +99,7 @@
 
                                         <label>Reviewer</label>
                                         <input class="form-control" type="text" placeholder="Reviewer Name" name="reviewer_name" value="{{ $review->reviewer->first_name.' '.$review->reviewer->last_name }}" disabled>
-                                        <input class="form-control" type="hidden" placeholder="Reviewer ID" name="reviewer_id" value="{{ $review->reviewer->id}}" disabled>
+                                        <input class="form-control" type="hidden" name="reviewerid" value="{{ $review->reviewer->id}}">
                                     </div>
                                     </div>
 
@@ -127,7 +127,7 @@
                                     <div class="form-group">
 
                                         <label>Enter Tags</label>
-                                        <input class="form-control" type="text" placeholder="Enter Comma Separated Tags" name="post_tags" style="margin-left:5%;width: 90%;" value="@foreach($tags as $tag){{ $tag->name.',' }}@endforeach">
+                                        <input class="form-control" type="text" placeholder="Enter Comma Separated Tags" name="post_tags" style="margin-left:5%;width: 90%;" value="@foreach($tags as $tag){{$tag->name.','}}@endforeach">
 
                                     </div>
 
@@ -166,7 +166,7 @@
 
                         </div>
 
-                    </div>
+
 
 
 
@@ -174,12 +174,11 @@
                     <button type="submit" class="btn btn-block btn-success">Publish</button>
 
                 </form>
-
             </div>
 
 
             </div>
-        </div>
+
 
 
 

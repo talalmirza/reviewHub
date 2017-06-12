@@ -17,26 +17,25 @@
                @include('admin.admin_partials._sidebar')
 
 
-                <div class="col-md-10 col-sm-10">
+                <div class="col-md-10 col-sm-12">
 
                     <div class="row">
 
-                        <h4> &nbsp&nbsp Published Reviews &nbsp&nbsp <a href="{{url('review/create')}}" style="color:white"><button type="button" class="btn btn-primary">New Review</button></a> </h4>
+                        <h4> &nbsp&nbsp Published Reviews &nbsp&nbsp <a href="{{url('review/create')}}" style="color:white"><button type="button" class="btn btn-primary">+ New Review</button></a> </h4>
 
 
                     </div>
 
                     <div class="row">
 
-                        <div class="col-md-6 col-sm-6">
+                        <div class="col-md-6 col-sm-12">
                             <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-default">All</button>
-                                <button type="button" class="btn btn-default">Published</button>
-                                <button type="button" class="btn btn-default">Draft</button>
+                                <button type="button" class="btn btn-success">Published</button>
+                                <button type="button" class="btn btn-danger">Deleted</button>
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-sm-6">
+                        <div class="col-md-6 col-sm-12">
 
 
                             <div class="input-group col-md-9 col-sm-9" id="sm_searchbar" style="float:right">
@@ -56,44 +55,51 @@
 
                     <div class="row" style="margin-top:1%">
                         <div class="table-responsive">
-                            <table class="table table-bordered">
+                            <table class="table table-bordered table-responsive">
                                 <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>ID#</th>
                                     <th>Title</th>
                                     <th>Category</th>
-                                    <th>Author</th>
-                                    <th>Timestamp</th>
+                                    <th>Reviewer</th>
+                                    <th>Date</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
 
                                 </tr>
                                 </thead>
+
+
                                 <tbody>
+
+                                @foreach($reviews as $review)
+
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
+                                    <th scope="row">{{$review->id }}</th>
+                                    <td>{{$review->title }}</td>
+                                    <td>{{$review->category->name }}</td>
+                                    <td>{{$review->reviewer->first_name }}</td>
+                                    <td>{{$review->created_at }}</td>
+                                    <td><a href="/review/{{$review->id}}/edit"><button type="button" class="btn btn-primary">Edit</button></a></td>
+                                        <td>
+                                        <form action="/review/{{$review->id}}" method="POST">
+
+                                            {{ csrf_field() }}
+
+                                            {{ method_field('DELETE') }}
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+
+                                    </td>
 
                                 </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
 
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
+                                @endforeach
 
-                                </tr>
                                 </tbody>
+
                             </table>
+
                         </div>
                     </div>
 
@@ -105,19 +111,7 @@
         </div>
 
 
-        <div class="wrapperDark footer_text">
 
-            <div class="container divider6">
-
-                <div class="col-md-12">
-
-                    <h5 class="text-center" style="color:white;"> COPYRIGHTS RESERVED - REVIEWHUB 2017 </h5>
-
-                </div><!-- /.col -->
-
-            </div><!-- /.container -->
-
-        </div>
 
     </div><!-- /#page -->
 
