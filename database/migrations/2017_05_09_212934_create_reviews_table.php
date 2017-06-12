@@ -21,6 +21,7 @@ class CreateReviewsTable extends Migration
             $table->text('featureimage')->nullable();
             $table->smallInteger('category_id');
             $table->integer('reviewer_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

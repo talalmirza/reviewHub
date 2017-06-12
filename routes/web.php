@@ -45,8 +45,10 @@ Route::get ('dashboard' , function(){
 
 });
 
-
+Route::get ('home##livefeed' ,'HomeController@index');
+Route::get ('home#subslist' ,'HomeController@index');
 Route::get ('home#category_list' ,'HomeController@index');
+
 
 Route::get ('posts' , function(){
 
