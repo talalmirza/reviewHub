@@ -6,7 +6,7 @@ Route::get('/', function(){
 });
 
 
-Route::get ('/home' , 'CategoryController@index');
+Route::get ('/home' , 'HomeController@index');
 
 
 
@@ -46,7 +46,7 @@ Route::get ('dashboard' , function(){
 });
 
 
-Route::get ('home#category_list' ,'CategoryController@index');
+Route::get ('home#category_list' ,'HomeController@index');
 
 Route::get ('posts' , function(){
 

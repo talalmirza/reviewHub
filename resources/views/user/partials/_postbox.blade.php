@@ -11,7 +11,7 @@
         <div class="media-body">
 
             <h4 class="media-heading">Review Name</h4><b>Time Stamp</b> &nbsp;<a><b>Reviewer Name</b></a>  
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>London (CNN)UK Prime Minister Theresa May was clinging to power by her fingernails fdfdfdfddffffff on Sunday after losing her parliamentary majority in last Thursday's</p>
 
 
             <div>

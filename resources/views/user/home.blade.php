@@ -38,21 +38,14 @@
                 </ul>
                 <div class="tab-content">
 
-
+                    {{------LIVEFEED------}}
                     <div id="livefeed" class="tab-pane fade in active">
 
                         <div class="container" >
 
                             <div class="row">
 
-                                <div class="col-md-9 col-sm-8">
-
-                                @include ('user.partials.postbox')
-                                    @include ('user.partials.postbox')
-                                    @include ('user.partials.postbox')
-                                    @include ('user.partials.postbox')
-
-                                </div>
+                                @include ('user.partials.reviews')
 
                                 <div class="col-md-3 col-sm-4 text-center" style="margin-top:10px;" >
 
@@ -64,21 +57,14 @@
                         </div>
                     </div>
 
-
+                    {{------SUBSCRIBED------}}
                     <div id="subslist" class="tab-pane fade in">
 
                         <div class="container" >
 
                             <div class="row">
 
-                                <div class="col-md-9 col-sm-8">
-
-                                    @include ('user.partials.postbox')
-                                    @include ('user.partials.postbox')
-                                    @include ('user.partials.postbox')
-                                    @include ('user.partials.postbox')
-
-                                </div>
+                                @include ('user.partials.subreviews')
 
                                 <div class="col-md-3 col-sm-4 text-center" style="margin-top:10px;" >
 
@@ -90,7 +76,7 @@
                     </div>
 
 
-
+                    {{------CATEGORIES------}}
                     <div id="category_list" class="tab-pane fade in">
 
                         <div class="container" >

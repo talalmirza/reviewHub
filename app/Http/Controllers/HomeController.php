@@ -16,9 +16,10 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $review = Review::latest()->get();
-        $subreview = Review::latest()->whereIn('reviewer_id', [2,5,6])->get();
-        return View('user.home',compact('categories','review','subreview'));
+        $reviews = Review::latest()->get();
+        $subreviews = Review::latest()->whereIn('reviewer_id', [2,5,6])->get();
+//        $tags =
+        return View('user.home',compact('categories','reviews','subreviews'));
     }
 
     /**
