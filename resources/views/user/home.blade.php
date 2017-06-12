@@ -44,14 +44,15 @@
                         <div class="container" >
 
                             <div class="row">
-                                @foreach($reviews as $review)
+                                <div class="col-md-9 col-sm-8">
 
-                                    @include ('user.partials.reviews')
+                                        @include ('user.partials.reviews')
 
-                                @endforeach
+                                </div>
+
                                 <div class="col-md-3 col-sm-4 text-center" style="margin-top:10px;" >
 
-                                @include('user.partials.sidebarhomepage')
+                                    @include('user.partials.sidebarhomepage')
 
                                 </div>
 
@@ -65,9 +66,11 @@
                         <div class="container" >
 
                             <div class="row">
+                                <div class="col-md-9 col-sm-8">
 
-                                @include ('user.partials.subreviews')
+                                        @include ('user.partials.subreviews')
 
+                                </div>
                                 <div class="col-md-3 col-sm-4 text-center" style="margin-top:10px;" >
 
                                     @include('user.partials.sidebarhomepage')
