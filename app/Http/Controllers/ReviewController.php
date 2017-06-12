@@ -110,10 +110,17 @@ class ReviewController extends Controller
     }
 
 
-    public function edit(Review $review)
+    public function edit($id)
     {
 
-        
+        $review = Review::findorFail($id);
+
+        $categories = Category::all();
+       $tags= $review->tags->all();
+
+
+
+        return view('admin.edit_review')->withReview($review)->withCategories($categories)->withTags($tags);
 
     }
 

@@ -58,28 +58,29 @@
         <div class="container-fluid">
 
             <div class="text-center">
-                <h4><div class="well well-sm" style="background-color:rgba(51,122,183,1.00);color:white;">New Post</div></h4>
+                <h4><div class="well well-sm" style="background-color:rgba(51,122,183,1.00);color:white;">Edit Post</div></h4>
             </div>
 
             <div class="row dashrow1">
 
 
-                <form action="{{ route('review.store') }}" enctype="multipart/form-data" method="POST">
+                <form action="/review/{{$review->id}}" enctype="multipart/form-data" method="POST">
 
+                    {{ method_field('PUT') }}
                     {{ csrf_field() }}
 
                 <div class="col-md-9 col-sm-8">
 
                     <div style="margin-bottom:10px;">
 
-                        <input type="text" class="form-control" placeholder="Title of article/review ..." name="title" id="title">
+                        <input type="text" class="form-control" placeholder="Title of article/review ..." name="title" id="title" value="{{$review->title}}">
                     </div>
 
-                    <textarea name="body" id="body"></textarea>
+                    <textarea name="body" id="body">{!! $review->body !!}</textarea>
 
                     <div style="margin-top:10px;">
 
-                        <textarea class="form-control" placeholder="Caption/Excerpt" name="caption" id="caption" rows=2></textarea>
+                        <textarea class="form-control" placeholder="Caption/Excerpt" name="caption" id="caption" rows=2>{{$review->caption}}</textarea>
                     </div>
 
 
@@ -97,15 +98,21 @@
                                     <div class="form-group">
 
                                         <label>Reviewer</label>
-                                        <input class="form-control" type="text" placeholder="Reviewer Name" name="reviewer_id" disabled>
+                                        <input class="form-control" type="text" placeholder="Reviewer Name" name="reviewer_name" value="{{ $review->reviewer->first_name.' '.$review->reviewer->last_name }}" disabled>
+                                        <input class="form-control" type="hidden" placeholder="Reviewer ID" name="reviewer_id" value="{{ $review->reviewer->id}}" disabled>
+                                    </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="category_id">Select list:</label>
-                                        <select class="form-control" name="category_id">
-                                            <option>Select Category</option>
+                                        <select class="form-control" name="category_id" style="margin-left: 5%;width: 90%;">
+                                            <option value="{{$review->category->id}}">{{$review->category->name}}</option>
 
                                           @foreach( $categories as $category)
+
+                                              @if($review->category_id == $category->id)
+                                                  @continue;
+                                                @endif
 
                                                 <option value="{{ $category->id }}"> {{ $category->name }} </option>
 
@@ -120,17 +127,19 @@
                                     <div class="form-group">
 
                                         <label>Enter Tags</label>
-                                        <input class="form-control" type="text" placeholder="Enter Comma Separated Tags" name="post_tags">
+                                        <input class="form-control" type="text" placeholder="Enter Comma Separated Tags" name="post_tags" style="margin-left:5%;width: 90%;" value="@foreach($tags as $tag){{ $tag->name.',' }}@endforeach">
+
                                     </div>
 
                                     <hr>
+
 
 
                                     <label>Select Feature Image</label>
                                     <div class="text-center"  style="margin-bottom: 10px;">
 
                                         <div class="form-group ">
-                                            <a href="#"><img id='img-upload' name='img-upload' src="{{ asset('images/vectors/img_icon.png') }}" style="width:70%;height: auto;"></a>
+                                            <a href="#"><img id='img-upload' name='img-upload' src="{{  asset($review->featureimage) }}" style="width:70%;height: auto;"></a>
 
                                         </div>
 
