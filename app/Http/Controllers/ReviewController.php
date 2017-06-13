@@ -24,12 +24,51 @@ class ReviewController extends Controller
     {
 
         $reviews = Review::all();
+
+        $reviewsdeleted= Review::onlyTrashed()->get();
+
         $categories = Category::all();
 
 
-        return view ('admin.posts')->withReviews($reviews)->withCategories($categories);
+        return view ('admin.posts',compact('reviews','reviewsdeleted','categories'));
 
     }
+
+
+    public function reviewRestore($id)
+    {
+
+        Review::onlyTrashed()
+            ->where('id', $id)
+            ->restore();
+
+        return redirect()->route('review.index');
+
+    }
+
+    public function confirmDelete($id)
+    {
+
+        Review::onlyTrashed()
+            ->where('id', $id)
+            ->forceDelete();
+
+        return redirect()->route('review.index');
+
+    }
+
+    public function showDashboardPosts()
+    {
+
+        $reviews = Review::orderBy('id', 'desc')->take(5)->get();
+
+
+
+
+        return view ('admin.dashboard',compact('reviews'));
+
+    }
+
 
     public function create()
     {

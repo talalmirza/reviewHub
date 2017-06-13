@@ -102,6 +102,15 @@ Route::get ('reviewerapply' , function(){
 });
 
 
+Route::get ('restore/{id}','ReviewController@reviewRestore');
+
+Route::get ('delete/{id}','ReviewController@confirmDelete');
+
+Route::get ('/dashboard','ReviewController@showDashboardPosts');
+
+
+
+
 
 Route::resource ('/review','ReviewController');
 

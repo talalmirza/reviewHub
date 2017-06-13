@@ -29,10 +29,11 @@
                     <div class="row">
 
                         <div class="col-md-6 col-sm-12">
-                            <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-success">Published</button>
-                                <button type="button" class="btn btn-danger">Deleted</button>
-                            </div>
+                            <ul class="nav nav-tabs">
+                                <li><a data-toggle="tab" href="#published"><button type="button" class="btn btn-success">Published</button></a></li>
+                                <li><a data-toggle="tab" href="#deleted"><button type="button" class="btn btn-danger">Deleted</button></a></li>
+
+                            </ul>
                         </div>
 
                         <div class="col-md-6 col-sm-12">
@@ -51,57 +52,119 @@
 
                     </div>
 
-                    <!-- poststable row-->
+                    <div class="tab-content">
 
-                    <div class="row" style="margin-top:1%">
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-responsive">
-                                <thead>
-                                <tr>
-                                    <th>ID#</th>
-                                    <th>Title</th>
-                                    <th>Category</th>
-                                    <th>Reviewer</th>
-                                    <th>Date</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
+                        <div id="published" class="tab-pane fade in active">
+                            <div class="row" style="margin-top:1%">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-responsive">
+                                        <thead>
+                                        <tr>
+                                            <th>ID#</th>
+                                            <th>Title</th>
+                                            <th>Category</th>
+                                            <th>Reviewer</th>
+                                            <th>Date</th>
+                                            <th>Display</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
 
-                                </tr>
-                                </thead>
+                                        </tr>
+                                        </thead>
 
 
-                                <tbody>
+                                        <tbody>
 
-                                @foreach($reviews as $review)
+                                        @foreach($reviews as $review)
 
-                                <tr>
-                                    <th scope="row">{{$review->id }}</th>
-                                    <td>{{$review->title }}</td>
-                                    <td>{{$review->category->name }}</td>
-                                    <td>{{$review->reviewer->first_name }}</td>
-                                    <td>{{$review->created_at }}</td>
-                                    <td><a href="/review/{{$review->id}}/edit"><button type="button" class="btn btn-primary">Edit</button></a></td>
-                                        <td>
-                                        <form action="/review/{{$review->id}}" method="POST">
+                                            <tr>
+                                                <th scope="row">{{$review->id }}</th>
+                                                <td>{{$review->title }}</td>
+                                                <td>{{$review->category->name }}</td>
+                                                <td>{{$review->reviewer->first_name }}</td>
+                                                <td>{{$review->created_at }}</td>
+                                                <td><a href="/review/{{$review->id}}"><button type="button" class="btn btn-pinterest">View</button></a></td>
+                                                <td><a href="/review/{{$review->id}}/edit"><button type="button" class="btn btn-primary">Edit</button></a></td>
+                                                <td>
+                                                    <form action="/review/{{$review->id}}" method="POST">
 
-                                            {{ csrf_field() }}
+                                                        {{ csrf_field() }}
 
-                                            {{ method_field('DELETE') }}
-                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                        </form>
+                                                        {{ method_field('DELETE') }}
+                                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                                    </form>
 
-                                    </td>
+                                                </td>
 
-                                </tr>
+                                            </tr>
 
-                                @endforeach
+                                        @endforeach
 
-                                </tbody>
+                                        </tbody>
 
-                            </table>
+                                    </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                        <div id="deleted" class="tab-pane fade">
+                            <div class="row" style="margin-top:1%">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-responsive">
+                                        <thead>
+                                        <tr>
+                                            <th>ID#</th>
+                                            <th>Title</th>
+                                            <th>Category</th>
+                                            <th>Reviewer</th>
+                                            <th>Date</th>
+                                            <th>Restore</th>
+                                            <th>Confirm Delete</th>
+
+                                        </tr>
+                                        </thead>
+
+
+                                        <tbody>
+
+                                        @foreach($reviewsdeleted as $rd)
+
+                                            <tr>
+                                                <th scope="row">{{$rd->id }}</th>
+                                                <td>{{$rd->title }}</td>
+                                                <td>{{$rd->category->name }}</td>
+                                                <td>{{$rd->reviewer->first_name }}</td>
+                                                <td>{{$rd->created_at }}</td>
+                                                <td><a href="restore/{{$rd->id}}"><button type="button" class="btn btn-primary">Restore</button></a></td>
+                                                <td><a href="delete/{{$rd->id}}"><button type="button" class="btn btn-danger">Confirm Delete</button></a></td>
+
+                                            </tr>
+
+                                        @endforeach
+
+                                        </tbody>
+
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+
 
                         </div>
-                    </div>
+
+
+
+
+
+
+
+                    <!-- poststable row-->
+
+
 
 
 
