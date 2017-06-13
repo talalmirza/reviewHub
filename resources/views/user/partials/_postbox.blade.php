@@ -20,14 +20,14 @@
 
                 <div class="w3-container w3-white">
                     <p>{{$review->caption}}</p>
-                    <img src="{{asset($review->featureimage)}}" class="media-object" style="width:90%; border-radius: 3px ;height:auto;">
+                    <img src="{{asset($review->featureimage)}}" class="media-object" style="width:70%; border-radius: 3px ;height:auto;">
 
                 </div>
 
                 <footer class="w3-container w3-white" style="padding-left:25px;padding-top: 20px">
-                    <a><i class="fa fa-2x fa-thumbs-up"></i></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a><i class="fa fa-2x fa-thumbs-up">{{$review->likes->count()}}</i></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a><i class="fa fa-2x fa-share"></i></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a><i class="fa fa-2x fa-comment"></i></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a><i class="fa fa-2x fa-comment">{{$review->comments->count()}}</i></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                 </footer>
 

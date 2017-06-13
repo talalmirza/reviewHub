@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Review;
+use App\Tag;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -18,8 +19,8 @@ class HomeController extends Controller
         $categories = Category::all();
         $reviews = Review::latest()->get();
         $subreviews = Review::latest()->whereIn('reviewer_id', [2,5,6])->get();
-//        $tags =
-        return View('user.home',compact('reviews','categories','subreviews'));
+        $tags = Tag::all();
+        return View('user.home',compact('reviews','categories','subreviews','tags'));
     }
 
     /**

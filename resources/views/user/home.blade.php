@@ -61,7 +61,7 @@
                     </div>
 
                     {{------SUBSCRIBED------}}
-                    <div id="subslist" class="tab-pane fade in">
+                    <div id="subslist" class="tab-pane fade">
 
                         <div class="container" >
 
@@ -82,7 +82,7 @@
 
 
                     {{------CATEGORIES------}}
-                    <div id="category_list" class="tab-pane fade in">
+                    <div id="category_list" class="tab-pane fade">
 
                         <div class="container" >
 
