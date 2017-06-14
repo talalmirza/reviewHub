@@ -109,8 +109,10 @@ Route::get ('delete/{id}','ReviewController@confirmDelete');
 
 Route::get ('/dashboard','ReviewController@showDashboardPosts');
 
-
-
+Route::post('/like', [
+    'uses' => 'ReviewController@likeReview',
+    'as' => 'like'
+]);
 
 
 Route::resource ('/review','ReviewController');

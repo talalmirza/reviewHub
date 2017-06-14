@@ -139,4 +139,11 @@
 
     </script>
 
+ <script>
+     var token = '{{ Session::token() }}';
+     var urlLike = '{{ route('like') }}';
+ </script>
+
+
+
     @endsection

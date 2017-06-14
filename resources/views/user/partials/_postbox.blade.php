@@ -2,9 +2,10 @@
 
     <div class="w3-container">
 
-        <div class="w3-card-4" >
+        <div class="w3-card-4" data-postid="{{ $review->id }}" >
             <div class="row" style="padding-left: 40px;padding-right: 40px;padding-bottom: 10px">
                 <header class="w3-container w3-white">
+
                     <h3 id="title" style="font-weight: bold">{{$review->title}}</h3>
 
                     <p style="font-weight: 400;display: inline-block;">
@@ -25,7 +26,7 @@
                 </div>
 
                 <footer class="w3-container w3-white" style="padding-left:25px;padding-top: 20px">
-                    <a><i class="fa fa-2x fa-thumbs-up">{{$review->likes->count()}}</i></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="like"><i class="fa fa-2x fa-thumbs-up">{{$review->likes->count()}}</i></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a><i class="fa fa-2x fa-share"></i></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a><i class="fa fa-2x fa-comment">{{$review->comments->count()}}</i></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
