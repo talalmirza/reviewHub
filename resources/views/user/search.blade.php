@@ -9,17 +9,19 @@ ul.nav{
 }
 li#dash{
     width: 101%;
+    text-align:center;
 }
 a#sub:visited{
-    border-color: #040042;
-    background-color: #040042;
+    border-color: rgb(1, 1, 41);
+    background-color: rgb(1, 1, 41);
     color: white;
     border-top-width: 0px;border-left-width: 0px;border-right-width: 0px;
 }
-a#everything:visited{
-    border-color: #040042;
+
+a#everything:hover{
+    border-color: rgb(1, 1, 41);
+    background-color:rgb(1, 1, 41);
     color:white;
-    background-color: #040042;
     border-top-width: 0px;border-left-width: 0px;border-right-width: 0px;
 }
 img#food{
@@ -31,29 +33,24 @@ img#food{
 @section ('content')
     @include ('user.partials.navbar')
 
-
-
-        <div class="container">
+        <div class="container" style="background-color: white">
             <div class="row">
                 <div class="row"><h1>Search results for "Ali"</h1></div>
                 <div class="row">
-                    <div class="col-md-2 col-sm-2" style="background-color: #0F0F0F;border-radius: 15px;">
+                    <div class="col-md-2 col-sm-2" style="background-color: #0F0F0F; padding-top: 20px">
                         <div class="row" id="navtabs_row" style="background-color: #0F0F0F;">
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12"> <h3 style="color:white;padding-left:  30px">You want?</h3></div>
-                            </div>
-                            <div class="row">
-                            <div class="col-md-12 col-sm-12" style="padding-bottom: 20px;">
+
+                            <div class="col-md-12 col-sm-12" style="padding-bottom: 20px;padding-left: 0px;padding-right: 0px;">
                                 <ul class="nav nav-tabs nav-stacked" id="nav"style="background-color: #0F0F0F;border-bottom: 0px">
-                                    <li role="presentation" id="dash"class="active" ><a style="border-top-width: 0px;border-radius: 15px;border-left-width: 0px;" id="everything" data-toggle="tab" href="#home">Everything<span id="span" style="font-size:  small; left:51%" class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a></li>
-                                    <li role="presentation"id="dash"><a style="border-top-width: 0px;border-radius: 25px;border-left-width: 0px;" id="sub"data-toggle="tab" href="#subslist">Posts<span id="span" style="font-size: small; left:70%" class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a></li>
-                                    <li role="presentation"id="dash"><a style="border-top-width: 0px;border-radius: 25px;border-left-width: 0px;"id="sub" data-toggle="tab" href="#category_list">Tags<span id="span" style="font-size: small; left:73%" class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a></li>
+                                    <li role="presentation" id="dash" class="active"><a class="text-centre" style="border-top-width: 0px;border-radius: 25px;border-left-width: 0px;" id="everything" data-toggle="tab" href="#home">Everything</a></li>{{--<span id="span" style="font-size:small; left:47%" class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>--}}
+                                    <li role="presentation" id="dash">               <a style="border-top-width: 0px;border-radius: 25px;border-left-width: 0px;" id="sub"data-toggle="tab" href="#subslist">Posts</a></li>{{--<span id="span" style="font-size: small; left:68%" class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>--}}
+                                    <li role="presentation" id="dash">               <a style="border-top-width: 0px;border-radius: 25px;border-left-width: 0px;"id="sub" data-toggle="tab" href="#category_list">Tags</a></li>{{--<span id="span" style="font-size: small; left:73%" class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>--}}
                                 </ul>
                              </div>
-                            </div>
+
                         </div>
                     </div>
-                    <div class="col-md-8 col-sm-8">
+                    <div class="col-md-10 col-sm-10">
                         <div class="tab-content">
 
 
@@ -107,7 +104,7 @@ img#food{
                                     </div>
                                 </div>
                             </div>
-
+                            {{--@include ('user.partials._postbox')--}}     
 
                             <div id="category_list" class="tab-pane fade in fixed-bottom">
 
@@ -177,17 +174,11 @@ img#food{
 
                         </div>
                     </div>
-                    <div class="col-md-2 col-sm-2">
-                        <div class="row" style="background-color: black">
-                            <div class="col-md-12 col-sm-12">
-                                <h3 style="color:white;">here should be something or delete this box and ignore other text</h3>
-                                <p style="color:white;">magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
+
    {{-- <div class="container">
         <div class="row">
             <div class="row"><h1>Search results for "Ali"</h1></div>

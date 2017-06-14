@@ -8,7 +8,7 @@ Route::get('/', function(){
 
 Route::get ('/home' , 'HomeController@index');
 
-
+Route::get ('/search' , 'SearchController@index');
 
 Route::get ('/search' , function(){
 
@@ -17,6 +17,7 @@ Route::get ('/search' , function(){
 
 
 });
+
 
 Route::get ('/review' , function(){
 
