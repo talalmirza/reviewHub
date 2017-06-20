@@ -3,19 +3,10 @@
 <div class="well">
     <form>
         <div class="form-group">
-            <label for="contactName">Name</label>
-            <input type="email" class="form-control" id="contactName" >
-        </div>
-        <div class="form-group">
-            <label for="contactEmail">Email</label>
-            <input type="email" class="form-control" id="contactEmail" >
-            <p class="help-block">Make sure you use a valid email address</p>
-        </div>
-        <div class="form-group">
             <label for="contactComment">Comment</label>
-            <textarea class="form-control" id="contactComment"></textarea>
+            <textarea class="form-control" id="comment"></textarea>
         </div>
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="button" class="btn btn-success comment-btn" data-id="{{$review->id}}">Submit</button>
     </form>
 </div>
 <hr>

@@ -5,6 +5,7 @@
         <a href="{{ url('dashboard') }}"><li class="list-group-item {{ set_active(['dashboard']) }} ">Home</li></a>
         <a href="{{ route('review.index') }}"><li class="list-group-item {{ set_active(['posts']) }} ">Posts</li></a>
         <a href="{{ url('settings') }}"><li class="list-group-item {{ set_active(['settings']) }} ">Setting</li></a>
+        <a href="{{ url('followers') }}"><li class="list-group-item {{ set_active(['followers']) }} ">Followers</li></a>
         <li class="list-group-item {{ set_active(['users']) }} ">Users</li>
 
     </ul>

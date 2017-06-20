@@ -6,16 +6,18 @@
 
     <div class="page">
 
-        @include ('user.partials.navbar')
+    @include ('user.partials.navbar')
 
-                <!-- Page Content -->
+    <!-- Page Content -->
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <div class="page-header">
                         <h1 id="title" style="font-weight: bold">{{ $review->title }}</h1>
                         <h5 id="category">
-                            <span style="padding-right:3px; padding-top: 3px; display:inline-block;"><img style="width: 30px; height: 30px;" src="{{URL::asset('images/vectors/'.$review->category->vector)}}"></span>
+                            <span style="padding-right:3px; padding-top: 3px; display:inline-block;"><img
+                                        style="width: 30px; height: 30px;"
+                                        src="{{URL::asset('images/vectors/'.$review->category->vector)}}"></span>
                             {{ $review->category->name }}
                         </h5>
 
@@ -25,8 +27,10 @@
                         </p>
 
                         <p style="color: darkgrey; display: inline-block;">
-                            <a href="#" id="username" style="text-decoration: none;"><i class="fa fa-at"></i>{{$review->reviewer->username}}</a>
-                            &nbsp;|&nbsp;&nbsp;<i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;{{$review->created_at->format('F j')}}
+                            <a href="#" id="username" style="text-decoration: none;"><i
+                                        class="fa fa-at"></i>{{$review->reviewer->username}}</a>
+                            &nbsp;|&nbsp;&nbsp;<i class="fa fa-calendar"
+                                                  aria-hidden="true"></i>&nbsp;{{$review->created_at->format('F j')}}
                         </p>
                         {{--<p>Posted by <span class="glyphicon glyphicon-user"></span> <a href="#">{{ $review->reviewer->first_name . ' ' . $review->reviewer->last_name }}</a> on <span class="glyphicon glyphicon-time"></span> {{ $review->created_at->toFormattedDateString() }} in <span class="glyphicon glyphicon-book"></span> {{ $review->category->name }} </p>--}}
                     </div>
@@ -39,9 +43,10 @@
             <div class="row">
                 <div class="col-md-9 col-sm-8">
 
-                    <div class="text-center" >
+                    <div class="text-center">
 
-                        <img src="{{  asset($review->featureimage) }}" alt="" style="width:90%; border-radius: 3px ;height:auto;">
+                        <img src="{{  asset($review->featureimage) }}" alt=""
+                             style="width:90%; border-radius: 3px ;height:auto;">
 
 
                     </div>
@@ -50,19 +55,19 @@
                     <p class="lead">{{$review->caption}}</p>
 
 
-
-                       {!! $review->body !!}
+                    {!! $review->body !!}
 
 
                     <hr>
 
                     <!-- Comment form -->
-                    @include('user.partials.articlecommentform')
+                @include('user.partials.articlecommentform')
 
-                    <!-- Comments -->
+                <!-- Comments -->
                     <h3>Comments</h3>
-                   @include('user.partials.commentbox')
-
+                    <div id="commentBox">
+                        @include('user.partials.commentbox')
+                    </div>
 
                 </div>
 
@@ -72,7 +77,8 @@
                     <!-- Panel -->
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h4 class="panel-title">Reviewer - {{ $review->reviewer->first_name . ' ' . $review->reviewer->last_name }}</h4>
+                            <h4 class="panel-title">Reviewer
+                                - {{ $review->reviewer->first_name . ' ' . $review->reviewer->last_name }}</h4>
                         </div>
                         <div class="panel-body">
                             <label>About {{  $review->reviewer->first_name }}</label>
@@ -81,9 +87,7 @@
                     </div>
 
 
-
                 </div>
-
 
 
             </div>
@@ -95,33 +99,33 @@
 
         <br>
     </div>
-    @endsection
+@endsection
 
 
 @section('custom-script')
 
 
 
- <script>
-            var url = document.location.toString();
+    <script>
+        var url = document.location.toString();
 
-            if (url.match('#')) {
+        if (url.match('#')) {
             $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
-            } //add a suffix
+        } //add a suffix
 
-            // Change hash for page-reload
+        // Change hash for page-reload
 
-            $('.nav-tabs a').on('shown.bs.tab', function (e) {
+        $('.nav-tabs a').on('shown.bs.tab', function (e) {
             window.location.hash = e.target.hash;
-                window.scrollTo(0, 0);
+            window.scrollTo(0, 0);
 
 
-            });
+        });
 
- </script>
+    </script>
 
     <script>
-        $(function() {
+        $(function () {
             var hash = window.location.hash;
             hash && $('ul.nav a[href="' + hash + '"]').tab('show');
 
@@ -134,6 +138,30 @@
         });
 
 
+        $('.comment-btn').on('click', function () {
+
+            _this = this;
+            var id = $(this).attr('data-id');
+
+            $.ajax({
+                type: 'get',
+                url: '/comment/review/' + id,
+                data: {
+                    comment: $("#comment").val()
+                },
+                success: function (res) {
+                    console.log(res);
+                    $("#comment").val('');
+                    var s = '<div class="well"><div class="media"><div class="media-left media-middle"><img src="http://placehold.it/70x70" alt=""></div>' +
+                        '<div class="media-body">' +
+                        '<h5 class="margin-t-0"><b>'+ res.name +'</b></h5><h6>'+ res.time +'</h6>' +
+                        '<p>'+ res.body +'</p></div></div></div>';
+                        $('#commentBox').prepend(s);
+
+                },
+            })
+
+        });
     </script>
 
-    @endsection
+@endsection

@@ -9,7 +9,7 @@
                 <div class="box">
                     <div class="content">
                         <div class="social">
-                            <a id="google_login" class="circle google" href="/auth/google_oauth2">
+                            <a id="google_login" class="circle google" href="/auth/google">
                                 <i class="fa fa-google-plus fa-fw"></i>
                             </a>
                             <a id="facebook_login" class="circle facebook" href="/auth/facebook">
@@ -25,8 +25,30 @@
                         <div class="form loginBox">
                             <form method="post" action="/login" accept-charset="UTF-8">
                                 <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                                <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                <input class="btn btn-default btn-login" type="button" value="Login" onclick="loginAjax()">
+                                <input id="password" class="form-control" type="password" placeholder="Password"
+                                       name="password">
+                                {{csrf_field()}}
+                                <input class="btn btn-default btn-login" type="submit" value="Login"
+                                >
+                                @if (count($errors) >0 )
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                                @if (session()->has('status'))
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            Incorrect Credentials
+                                        </ul>
+                                        <script>
+                                            loginAjax()
+                                        </script>
+                                    </div>
+                                @endif
                             </form>
                         </div>
                     </div>
@@ -35,17 +57,30 @@
                     <div class="content registerBox" style="display:none;">
                         <div class="form">
 
-                            <form method="post" html="{:multipart=>true}" data-remote="true" action="/register" accept-charset="UTF-8">
+                            <form method="post" html="{:multipart=>true}" data-remote="true" action="/register"
+                                  accept-charset="UTF-8">
+                                <input id="username" class="form-control" type="text" placeholder="Username"
+                                       name="username">
                                 <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                                <input id="password" class="form-control" type="password" placeholder="Password" name="password">
+                                <input id="password" class="password form-control" type="password" placeholder="Password"
+                                       name="password">
 
-                                <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
-
-
-                                    <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
-                              
-
-                                <input class="btn btn-default btn-register" type="submit" value="Create account" name="commit">
+                                <input id="password_confirmation" class="re-password form-control" type="password"
+                                       placeholder="Repeat Password" name="password_confirmation">
+                                {{csrf_field()}}
+                                <input class="form-control" id="date" name="dob" placeholder="MM/DD/YYY" type="date"/>
+                                <input class="btn btn-default btn-register" type="submit" value="Create account"
+                                       name="commit">
+                                <div class="btn-danger passwordStatus"></div>
+                                @if (count($errors) > 0)
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                             </form>
                         </div>
                     </div>

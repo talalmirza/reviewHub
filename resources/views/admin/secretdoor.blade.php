@@ -38,7 +38,7 @@
 
     </div>
     <section style="padding-top:0px;">
-        <form method="post" action="" role="login">
+        <form method="post" action="/reviewer/login" role="login">
 
 
             <div class="form-group">
@@ -51,8 +51,18 @@
                 <span class="glyphicon glyphicon-lock"></span>
             </div>
 
+            {{csrf_field()}}
             <button type="submit" name="go" class="btn btn-primary btn-block">Login Now</button>
-
+            @if (session()->has('error'))
+                <div class="alert alert-danger">
+                    <ul>
+                        Incorrect Credentials
+                    </ul>
+                    <script>
+                        loginAjax()
+                    </script>
+                </div>
+            @endif
             <a href="#">Reset password</a>
         </form>
     </section>

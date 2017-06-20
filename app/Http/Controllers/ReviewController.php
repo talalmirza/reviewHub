@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 
 
-
 use App\Review;
 use App\Category;
 use App\Tag;
@@ -17,7 +16,6 @@ use Purifier;
 use Image;
 
 
-
 class ReviewController extends Controller
 {
     public function index()
@@ -25,12 +23,12 @@ class ReviewController extends Controller
 
         $reviews = Review::all();
 
-        $reviewsdeleted= Review::onlyTrashed()->get();
+        $reviewsdeleted = Review::onlyTrashed()->get();
 
         $categories = Category::all();
 
 
-        return view ('admin.posts',compact('reviews','reviewsdeleted','categories'));
+        return view('admin.posts', compact('reviews', 'reviewsdeleted', 'categories'));
 
     }
 
@@ -63,9 +61,7 @@ class ReviewController extends Controller
         $reviews = Review::orderBy('id', 'desc')->take(5)->get();
 
 
-
-
-        return view ('admin.dashboard',compact('reviews'));
+        return view('admin.dashboard', compact('reviews'));
 
     }
 
@@ -99,15 +95,15 @@ class ReviewController extends Controller
         if ($request->hasFile('imgInp')) {
 
 
-            $image      = $request->file('imgInp');
-            $fileName   = time() . '.' . $image->getClientOriginalExtension();
+            $image = $request->file('imgInp');
+            $fileName = time() . '.' . $image->getClientOriginalExtension();
 
             Storage::disk('local')->put($fileName, File::get($image));
 
             $url = Storage::url($fileName);
 
 
-            $review->featureimage=$url;
+            $review->featureimage = $url;
 
         }
 
@@ -115,22 +111,18 @@ class ReviewController extends Controller
         $review->save();
 
 
-
-        if($review)
-        {
+        if ($review) {
             $tagNames = explode(',', $request->post_tags);
             $tagIds = [];
 
-            foreach($tagNames as $tagName)
-            {
+            foreach ($tagNames as $tagName) {
                 //$post->tags()->create(['name'=>$tagName]);
                 //Or to take care of avoiding duplication of Tag
                 //you could substitute the above line as
 
-                $tag = Tag::firstOrCreate(['name'=>$tagName]);
+                $tag = Tag::firstOrCreate(['name' => $tagName]);
 
-                if($tag)
-                {
+                if ($tag) {
                     $tagIds[] = $tag->id;
                 }
 
@@ -148,7 +140,7 @@ class ReviewController extends Controller
     public function show(Review $review)
     {
 
-        return view('user.reviewarticle',compact('review'));
+        return view('user.reviewarticle', compact('review'));
     }
 
 
@@ -158,8 +150,7 @@ class ReviewController extends Controller
         $review = Review::findorFail($id);
 
         $categories = Category::all();
-       $tags= $review->tags->all();
-
+        $tags = $review->tags->all();
 
 
         return view('admin.edit_review')->withReview($review)->withCategories($categories)->withTags($tags);
@@ -180,20 +171,20 @@ class ReviewController extends Controller
         $review->caption = $request->caption;
         $review->body = $request->body;
         $review->category_id = $request->category_id;
-        $review->reviewer_id =$request->reviewerid;
+        $review->reviewer_id = $request->reviewerid;
 
         if ($request->hasFile('imgInp')) {
 
 
-            $image      = $request->file('imgInp');
-            $fileName   = time() . '.' . $image->getClientOriginalExtension();
+            $image = $request->file('imgInp');
+            $fileName = time() . '.' . $image->getClientOriginalExtension();
 
             Storage::disk('local')->put($fileName, File::get($image));
 
             $url = Storage::url($fileName);
 
 
-            $review->featureimage=$url;
+            $review->featureimage = $url;
 
         }
 
@@ -201,22 +192,18 @@ class ReviewController extends Controller
         $review->update();
 
 
-
-        if($review)
-        {
+        if ($review) {
             $tagNames = explode(',', $request->post_tags);
             $tagIds = [];
 
-            foreach($tagNames as $tagName)
-            {
+            foreach ($tagNames as $tagName) {
                 //$post->tags()->create(['name'=>$tagName]);
                 //Or to take care of avoiding duplication of Tag
                 //you could substitute the above line as
 
-                $tag = Tag::firstOrCreate(['name'=>$tagName]);
+                $tag = Tag::firstOrCreate(['name' => $tagName]);
 
-                if($tag)
-                {
+                if ($tag) {
                     $tagIds[] = $tag->id;
                 }
 

@@ -23,7 +23,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Profile &nbsp;<span class="fa fa-user" style="color:white;"></span></a></li>
 
-                <li><a href="{{ url ('secretdoor') }}">Logout</a></li>
+                <li><a href="/reviewer/logout">Logout</a></li>
 
 
             </ul>
