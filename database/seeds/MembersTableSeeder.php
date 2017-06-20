@@ -20,7 +20,7 @@ class MembersTableSeeder extends Seeder
 
             Member::create(array(
                 'username' => $faker->unique()->userName,
-                'profile_url' => $faker->unique()->userName,
+                
                 'password' => bcrypt($faker->name),
                 'email' => $faker->unique()->freeEmail,
                 'first_name' => $faker->firstName,

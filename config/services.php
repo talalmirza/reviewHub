@@ -41,8 +41,8 @@ return [
         'redirect' => env('FACEBOOK_REDIRECT'),
     ],
     'google' => [
-        'client_id' => '709522036307-bm776hrk3phagpvnccvuub5jf4povvfl.apps.googleusercontent.com',
-        'client_secret' => '4V7I1shQLJBOWMuTaLluCGnc',
-        'redirect' => 'http://localhost:8017/auth/google/callback',
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_ID'),
+        'redirect' => env('GOOGLE_CLIENT_ID'),
     ],
 ];

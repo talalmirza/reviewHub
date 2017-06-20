@@ -38,7 +38,7 @@ class SocialController extends Controller
 
     public function gregister()
     {
-        $user = $this->loginOrCreateUser(Socialite::driver('google')->user());
+        $user = $this->loginOrCreateUser(Socialite::driver('google')->stateless()->user());
         Auth::login($user, true);
         return redirect('/home');
     }
@@ -50,6 +50,7 @@ class SocialController extends Controller
             return $authUser;
         }
 //        dd($user->getBirthday);
+//dd ($user);exit;
         return Member::create([
             'email' => $user->email,
         ]);
