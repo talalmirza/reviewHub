@@ -59,6 +59,16 @@
             padding-right: 65px;
         }
 
+
+    </style>
+
+    <style>
+
+        #box:hover{
+            color: inherit;
+            text-decoration: none;
+        }
+
     </style>
 
 @endsection
@@ -95,17 +105,17 @@
             <div class="container">
 
                 <div class="row">
-
                     <div class="col-md-12 col-sm-12">
+
                         @foreach($reviews as $review)
+
                             @include('user.partials._landingpage_box')
-                            @endforeach
 
+                        @endforeach
 
-                        </div>
+                    </div>
 
-                </div>
-
+                </div><!-- end row -->
 
 
             </div><!-- end container -->
