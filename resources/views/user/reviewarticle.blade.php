@@ -88,6 +88,10 @@
                         </div>
 
                     <hr>
+                    @if(!Auth::check())
+                            <p class="alert alert-info">Please Signin/Signup to submit your verdict.</p>
+                            @endif
+
                     @if(Auth::check())
                     <!-- Comment form -->
                 @include('user.partials.articlecommentform')
@@ -96,11 +100,10 @@
                 <!-- Comments -->
                     <h3>Comments</h3>
 
+
                     <div id="commentBox">
                         @include('user.partials.commentbox')
                     </div>
-
-
 
                 </div>
 

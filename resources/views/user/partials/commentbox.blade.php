@@ -2,7 +2,7 @@
     <div class="well">
         <div class="media">
             <div class="media-left media-middle">
-                <img src="http://placehold.it/70x70" alt="">
+                <img src="{{ asset($c->member->avatar) }}" alt="">
             </div>
             <div class="media-body">
                 <h5 class="margin-t-0"><b>{{$c->member->email}}</b></h5>

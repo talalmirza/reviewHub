@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\MemberReviewer;
 use App\Review;
 use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+
 
 class HomeController extends Controller
 {
@@ -18,8 +21,15 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $reviews = Review::latest()->get();
-        $subreviews = Review::latest()->whereIn('reviewer_id', [2,5,6])->get();
+        $reviews = Review::orderBy('created_at', 'desc')->get();
+
+        //dd(Auth::id());exit;
+        $reviewers_sublist = MemberReviewer::select('reviewer_id')->where('member_id','=', Auth::id())->get();
+        //dd($reviewers_sublist);exit;
+
+        $subreviews = Review::latest()->whereIn('reviewer_id', $reviewers_sublist)->get();
+        //dd($subreviews);exit;
+
         $tag_ids = DB::table('review_tag')
             ->join('tags', 'tags.id', '=', 'review_tag.tag_id')
             ->select('tag_id')
@@ -28,12 +38,15 @@ class HomeController extends Controller
             ->take(5)
             ->get()->pluck('tag_id');
 
+
         $tag_names = [];
         foreach ($tag_ids->toArray()  as $id){
             array_push($tag_names,Tag::find($id)->name);
         }
+$member = Auth::user();
 
-        return view('user.home',compact('reviews','categories','subreviews','tag_names'));
+
+        return view('user.home',compact('reviews','categories','subreviews','tag_names','member'));
     }
 
     /**

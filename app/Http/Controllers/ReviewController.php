@@ -21,9 +21,9 @@ class ReviewController extends Controller
     public function index()
     {
 
-        $reviews = Review::all();
+        $reviews = Review::where('reviewer_id' , '=' , Session::get('admin')->id)->get();
 
-        $reviewsdeleted = Review::onlyTrashed()->get();
+        $reviewsdeleted = Review::onlyTrashed()->where('reviewer_id' , '=' , Session::get('admin')->id)->get();
 
         $categories = Category::all();
 
@@ -90,7 +90,7 @@ class ReviewController extends Controller
         $review->caption = $request->caption;
         $review->body = $request->body;
         $review->category_id = $request->category_id;
-        $review->reviewer_id = 1;
+        $review->reviewer_id = Session::get('admin')->id;
 
         if ($request->hasFile('imgInp')) {
 
@@ -106,6 +106,7 @@ class ReviewController extends Controller
             $review->featureimage = $url;
 
         }
+        
 
 
         $review->save();

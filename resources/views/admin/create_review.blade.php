@@ -130,7 +130,7 @@
                                     <div class="text-center"  style="margin-bottom: 10px;">
 
                                         <div class="form-group ">
-                                            <a href="#"><img id='img-upload' name='img-upload' src="{{ asset('images/vectors/img_icon.png') }}" style="width:70%;height: auto;"></a>
+                                            <a href="#"><img id='img-upload' name='img-upload' src="{{ asset('images/vectors/12-512.png') }}" style="width:70%;height: auto;"></a>
 
                                         </div>
 

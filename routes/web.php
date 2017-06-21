@@ -25,7 +25,7 @@ Route::get('user/{username}', function ($username) {
 });
 
 Route::get('/get/reviews', function () {
-    $r = \App\Review::all();
+    $r = \App\Review::orderBy('created_at', 'desc')->get();
     $view = View::make('user.partials.reviews', ['reviews' => $r]);
     return response()->json(["view" => $view->render()]);
 });

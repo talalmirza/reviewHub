@@ -16,10 +16,10 @@
             <div class="row" style="padding-left: 40px;padding-right: 40px;padding-bottom: 10px">
                 <header class="w3-container w3-white">
 
-                    <h3 id="title" style="font-weight: bold">{{$review->title}} {{ $review->id }}</h3>
+                    <h3 id="title" style="font-weight: bold">{{$review->title}}</h3>
 
                     <p style="font-weight: 400;display: inline-block;">
-                        {{$review->reviewer->first_name}}&nbsp;{{$review->reviewer->first_name}}
+                        {{$review->reviewer->first_name}}&nbsp;{{$review->reviewer->last_name}}
                     </p>
 
                     <p style="color: darkgrey; display: inline-block;">
@@ -38,8 +38,11 @@
                 <a href="/review/{{$review->id}}" style="text-decoration: none">
                 <div class="w3-container w3-white">
                     <p>{{$review->caption}}</p>
+
+                    @if (isset($review->featureimage))
                     <img src="{{asset($review->featureimage)}}" class="media-object"
                          style="width:70%; border-radius: 3px ;height:auto;">
+                        @endif
 
                 </div>
                     </a>
@@ -61,7 +64,7 @@
 
                             >{{$review->likes->count()}}</i></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         {{--Share External--}}
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=http://google.com/" target="_blank"><i
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=http://reviewhub.com/review/{{$review->id}}" target="_blank"><i
                                     class="fa fa-2x fa-share"></i></a>  &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/review/{{ $review->id }}"><i
                                     class="fa fa-2x fa-comment">{{$review->comments->count()}}</i></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

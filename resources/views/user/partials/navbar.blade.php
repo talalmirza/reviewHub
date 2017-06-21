@@ -25,9 +25,9 @@
                 <ul class="nav navbar-nav navbar-inverse navbar-right text-center">
                     @if(Auth::check())
 
-                        <li><a href="{{ url ('profile') }}"><img src="{{ URL::asset ('images/avatar.png') }}"
+                        <li><a href="/profile/{{Auth::user()->username}}"><img src="{{ URL::asset ('images/avatar.png') }}"
                                                                  class="img-circle" style="width:25px;height:auto;">
-                                &nbsp;&nbsp;Profile</a></li>
+                                &nbsp;&nbsp;<span>{{Auth::user()->first_name}}</span></a></li>
 
 
                         <li class="dropdown ">

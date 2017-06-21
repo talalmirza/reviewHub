@@ -42,6 +42,7 @@ class MemberProfileController extends Controller
 
     {
 
+
         $member = Member::where('username','=',$username)->first();
         return view ('user.profile', compact('member'));
 
