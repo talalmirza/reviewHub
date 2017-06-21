@@ -28,8 +28,9 @@
                                 <input id="password" class="form-control" type="password" placeholder="Password"
                                        name="password">
                                 {{csrf_field()}}
-                                <input class="btn btn-default btn-login" type="submit" value="Login"
-                                >
+                                <input class="btn btn-default btn-login" type="submit" value="Login">
+                                <br>
+                                <hr>
                                 @if (count($errors) >0 )
                                     <div class="alert alert-danger">
                                         <ul>
@@ -68,9 +69,13 @@
                                 <input id="password_confirmation" class="re-password form-control" type="password"
                                        placeholder="Repeat Password" name="password_confirmation">
                                 {{csrf_field()}}
-                                <input class="form-control" id="date" name="dob" placeholder="MM/DD/YYY" type="date"/>
+                                <input class="form-control" id="date" name="dob" placeholder="MM/DD/YYY" type="date">
+
+                                <br>
                                 <input class="btn btn-default btn-register" type="submit" value="Create account"
                                        name="commit">
+
+                                <br>
                                 <div class="btn-danger passwordStatus"></div>
                                 @if (count($errors) > 0)
                                     <div class="alert alert-danger">
