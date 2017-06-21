@@ -42,9 +42,9 @@ img#food{
 
                             <div class="col-md-12 col-sm-12" style="padding-bottom: 20px;padding-left: 0px;padding-right: 0px;">
                                 <ul class="nav nav-tabs nav-stacked" id="nav"style="background-color: #0F0F0F;border-bottom: 0px">
-                                    <li role="presentation" id="dash" class="active"><a class="text-centre" style="border-top-width: 0px;border-radius: 25px;border-left-width: 0px;" id="everything" data-toggle="tab" href="#home">Everything</a></li>{{--<span id="span" style="font-size:small; left:47%" class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>--}}
-                                    <li role="presentation" id="dash">               <a style="border-top-width: 0px;border-radius: 25px;border-left-width: 0px;" id="sub"data-toggle="tab" href="#subslist">Posts</a></li>{{--<span id="span" style="font-size: small; left:68%" class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>--}}
-                                    <li role="presentation" id="dash">               <a style="border-top-width: 0px;border-radius: 25px;border-left-width: 0px;"id="sub" data-toggle="tab" href="#category_list">Tags</a></li>{{--<span id="span" style="font-size: small; left:73%" class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>--}}
+                                    <li role="presentation" id="dash" class="active"><a class="text-centre" style="border-top-width: 0px;border-radius: 25px;border-left-width: 0px;" id="everything" data-toggle="tab" href="#home">Everything</a></li>
+                                    <li role="presentation" id="dash"><a style="border-top-width: 0px;border-radius: 25px;border-left-width: 0px;" id="sub"data-toggle="tab" href="#posts">Posts</a></li>
+                                    <li role="presentation" id="dash"><a style="border-top-width: 0px;border-radius: 25px;border-left-width: 0px;"id="sub" data-toggle="tab" href="#tags">Tags</a></li>
                                 </ul>
                              </div>
 

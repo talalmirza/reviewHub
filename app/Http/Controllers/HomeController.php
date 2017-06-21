@@ -19,8 +19,20 @@ class HomeController extends Controller
         $categories = Category::all();
         $reviews = Review::latest()->get();
         $subreviews = Review::latest()->whereIn('reviewer_id', [2,5,6])->get();
-        $tags = Tag::take(5)->get();
-        return View('user.home',compact('reviews','categories','subreviews','tags'));
+        $tag_ids = DB::table('review_tag')
+            ->join('tags', 'tags.id', '=', 'review_tag.tag_id')
+            ->select('tag_id')
+            ->groupBy('tag_id')
+            ->orderBy(DB::raw('count(tag_id)'), 'desc')
+            ->take(5)
+            ->get()->pluck('tag_id');
+
+        $tag_names = [];
+        foreach ($tag_ids->toArray()  as $id){
+            array_push($tag_names,Tag::find($id)->name);
+        }
+
+        return view('user.home',compact('reviews','categories','subreviews','tag_names'));
     }
 
     /**

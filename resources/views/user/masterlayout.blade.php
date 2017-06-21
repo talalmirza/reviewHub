@@ -41,17 +41,17 @@
 
 
 <!--=== Load JS here for greater good ====-->
-<script src="/js/jquery-1.8.3.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/login-register.js" type="text/javascript"></script>
-<script src="/js/isotope.pkgd.js"></script>
-<script src="/js/jquery.countdown.min.js"></script>
-<script src="/js/jquery.flexslider.js"></script>
-<script src="/js/jquery.nivo.slider.pack.js"></script>
-<script src="/js/portfolio-custom1.js"></script>
-<script src="/js/portfolio-custom2.js"></script>
-<script src="/js/main.js"></script>
-<script src="/js/matchPass.js"></script>
+<script src="{{URL::asset('js/jquery-1.8.3.min.js')}}"></script>
+<script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
+<script src="{{URL::asset('js/login-register.js')}}" type="text/javascript"></script>
+<script src="{{URL::asset('js/isotope.pkgd.js')}}"></script>
+<script src="{{URL::asset('js/jquery.countdown.min.js')}}"></script>
+<script src="{{URL::asset('js/jquery.flexslider.js')}}"></script>
+<script src="{{URL::asset('js/jquery.nivo.slider.pack.js')}}"></script>
+<script src="{{URL::asset('js/portfolio-custom1.js')}}"></script>
+<script src="{{URL::asset('js/portfolio-custom2.js')}}"></script>
+<script src="{{URL::asset('js/main.js')}}"></script>
+<script src="{{URL::asset('js/matchPass.js')}}"></script>
 
 @if (count($errors) > 0)
     @if (session('type') == 'reg')

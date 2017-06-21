@@ -14,7 +14,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Visit Site<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="{{ url('/home') }}">Visit Site<span class="sr-only">(current)</span></a></li>
 
                 <li><a href="{{url('review/create')}}">+ New</a></li>
 

@@ -32,10 +32,32 @@
             padding-top: 5%;
         }
 
-        #img-upload{
-            width: 100%;
-            height:auto;
+        @media screen and (max-width: 991px){
+
+
+            #img-upload{
+
+                width:50%;
+                height:auto;
+
+            }
+
         }
+
+
+        @media screen and (min-width: 992px){
+
+
+            #img-upload{
+
+                width:100%;
+                height:auto;
+
+            }
+
+        }
+
+
     </style>
 
 @endsection
@@ -51,15 +73,15 @@
         <div class="container">
 
             @if (isset($message))
-            <div class="alert alert-success alert-dismissable">
-            <a class="panel-close close" data-dismiss="alert">×</a>
-            <i class="fa fa-coffee"></i>
-            <strong>Congratulations ! </strong>{{$message}}
-            </div>
+                <div class="alert alert-success alert-dismissable">
+                    <a class="panel-close close" data-dismiss="alert">×</a>
+                    <i class="fa fa-coffee"></i>
+                    <strong>Congratulations ! </strong>{{$message}}
+                </div>
             @endif
 
             <div style="padding-left: 5%">
-                <h2>Edit your Profile {{$member->first_name}}</h2>
+                <h2>Edit your Profile {{$reviewer->first_name}}</h2>
             </div>
 
             <hr>
@@ -67,22 +89,25 @@
             <div class="row">
 
 
-
+                @include('admin.admin_partials._sidebar')
 
                 <br>
 
-                <form action="/profile/{{$member->username}}" enctype="multipart/form-data" method="POST">
+                <div class="col-md-9 col-md-offset-1">
+
+                <form action="/reviewer/profile/{{$reviewer->username}}" enctype="multipart/form-data" method="POST">
                     {{csrf_field()}}
 
                     <div class="row">
+
                         <!-- left column -->
-                        <div class="col-md-3 ">
+                        <div class="col-md-4">
 
                             <label>Select Profile Image</label>
                             <div class="text-center"  style="margin-bottom: 10px;">
 
                                 <div class="form-group ">
-                                    <a href="#"><img id='img-upload' name='img-upload' class="image-thumbnail" src="{{ url ($member->avatar) }}" style="width:70%;height: auto;"></a>
+                                    <a href="#"><img id='img-upload' name='img-upload' class="img-thumbnail" src="{{ url ($reviewer->avatar) }}" ></a>
 
                                 </div>
 
@@ -104,12 +129,26 @@
 
 
 
-                        <div class="col-md-8 personal-info col-md-offset-1">
-                            <div class="form-group">
-                                <label for="username">Username</label>
-                                <input disabled type="text" class="form-control" id="username" value="{{$member->username}}" name="username">
-                            </div>
+                        <div class="col-md-8 personal-info">
 
+
+
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="username">Username</label>
+                                        <input disabled type="text" class="form-control" id="username" value="{{$reviewer->username}}" name="username">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="rank">Rank</label>
+                                        <input disabled type="text" class="form-control" id="rank" value="{{$reviewer->rank->title}}" name="rank">
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="row">
 
@@ -117,7 +156,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="firstname">First name</label>
-                                        <input type="text" class="form-control" id="firstname" name="firstname" value="{{$member->first_name}}">
+                                        <input type="text" class="form-control" id="firstname" name="firstname" value="{{$reviewer->first_name}}">
                                     </div>
 
                                     <div class="form-group">
@@ -127,7 +166,7 @@
 
                                     <div class="form-group">
                                         <label for="email">Update Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" value="{{$member->email}}">
+                                        <input type="email" class="form-control" id="email" name="email" value="{{$reviewer->email}}">
                                     </div>
 
                                 </div>
@@ -136,7 +175,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="lastname">Last name</label>
-                                        <input type="text" class="form-control" id="lastname" name="lastname" value="{{$member->last_name}}">
+                                        <input type="text" class="form-control" id="lastname" name="lastname" value="{{$reviewer->last_name}}">
                                     </div>
 
                                     <div class="form-group">
@@ -151,78 +190,79 @@
 
 
 
-                        <div class="row">
+                            <div class="row">
 
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Select Region/Province</label>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Select Region/Province</label>
 
-                                    <select id="countrySelect" size="1" class="form-control" onclick="makeSubmenu(this.value)" name="region" >
-                                        <option value="{{$member->region}}">{{$member->region}}</option>
-                                        <option value="Balochistan">Balochistan</option>
-                                        <option value="Punjab">Punjab</option>
-                                        <option value="KhyberPakhtunkhawa">KhyberPakhtunkhawa</option>
-                                        <option value="Sindh">Sindh</option>
-                                    </select>
+                                        <select id="countrySelect" size="1" class="form-control" onclick="makeSubmenu(this.value)" name="region" >
+                                            <option value="{{$reviewer->region}}">{{$reviewer->region}}</option>
+                                            <option value="Balochistan">Balochistan</option>
+                                            <option value="Punjab">Punjab</option>
+                                            <option value="KhyberPakhtunkhawa">KhyberPakhtunkhawa</option>
+                                            <option value="Sindh">Sindh</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+                                        <label>Select City</label>
+                                        <select id="citySelect" size="1" class="form-control" name="city">
+                                            <option value="{{$reviewer->city}}">{{$reviewer->city}}</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="gender">Select Gender</label>
+
+                                <div class="form-control form-inline">
+
+                                    <input type="radio" id="gender" value="1" <?php echo ($reviewer->gender==1)? 'checked':'' ?> name="gender">&nbsp;&nbsp;Male&nbsp;&nbsp;
+                                    <input type="radio" id="gender" value="0" <?php echo ($reviewer->gender==0)? 'checked':'' ?> name="gender">&nbsp;&nbsp;Female
 
                                 </div>
+
                             </div>
 
-                            <div class="col-md-6">
-
-                                <div class="form-group">
-                                    <label>Select City</label>
-                                    <select id="citySelect" size="1" class="form-control" name="city">
-                                        <option value="{{$member->city}}">{{$member->city}}</option>
-                                    </select>
-
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="bio">Tell us about your self</label>
+                                        <textarea name="bio" class="form-control" rows="4">{{$reviewer->about}}</textarea>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
 
-                        </div>
-
-                        <div class="form-group">
-
-                            <label for="gender">Select Gender</label>
-
-                            <div class="form-control form-inline">
-
-                                <input type="radio" id="gender" value="1" <?php echo ($member->gender==1)? 'checked':'' ?> name="gender">&nbsp;&nbsp;Male&nbsp;&nbsp;
-                                <input type="radio" id="gender" value="0" <?php echo ($member->gender==0)? 'checked':'' ?> name="gender">&nbsp;&nbsp;Female
-
-                            </div>
-
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="bio">Tell us about your self</label>
-                                    <textarea name="bio" class="form-control" rows="4">{{$member->bio}}</textarea>
+                                        <label for="gender">Enter your Contact No.</label>
+                                        <input type="text" class="form-control" id="contact" name="contact" value="{{$reviewer->contact}}">
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
 
-                                    <label for="gender">Enter your Contact No.</label>
-                                    <input type="text" class="form-control" id="contact" name="contact" value="{{$member->contact_number}}">
-                                </div>
                             </div>
 
-                        </div>
-
-                        <br>
-                        <br>
+                            <br>
+                            <br>
 
                             <button type="submit" class="btn btn-block btn-primary"><b>Save Changes</b></button>
 
 
-                    </div>
+                        </div>
 
                     </div>
                 </form>
+                </div>
 
             </div>
         </div>

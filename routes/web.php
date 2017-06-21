@@ -66,7 +66,11 @@ Route::get('/review', function () {
 
 });
 
-Route::get ('/profile/{username}', 'MemberProfileController@edit');
+Route::get ('/profile/{username}', 'MemberProfileController@edit')->name('profileedit');
+Route::POST ('/profile/{username}', 'MemberProfileController@update');
+
+Route::get ('/reviewer/profile/{username}', 'ReviewerProfileController@edit')->name('profileedit');
+Route::POST ('/reviewer/profile/{username}', 'ReviewerProfileController@update');
 
 
 Route::get('dashboard', function () {

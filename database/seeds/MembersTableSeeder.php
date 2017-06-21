@@ -25,7 +25,7 @@ class MembersTableSeeder extends Seeder
                 'email' => $faker->unique()->freeEmail,
                 'first_name' => $faker->firstName,
                 'last_name' => $faker->lastName,
-                'avatar' => $faker->imageUrl($width = 640, $height = 480),
+                'avatar' => 'images/avatar.png',
                 'date_of_birth' => $faker->date,
                 'city' => $faker->randomElement($array = array('Lahore', 'Peshawar', 'Karachi')),
                 'region' => $faker->randomElement($array = array('Punjab', 'KPK', 'Sindh')),
