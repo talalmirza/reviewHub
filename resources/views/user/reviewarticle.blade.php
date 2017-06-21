@@ -88,17 +88,22 @@
                         </div>
 
                     <hr>
-
+                    @if(Auth::check())
                     <!-- Comment form -->
                 @include('user.partials.articlecommentform')
+                @endif
 
                 <!-- Comments -->
                     <h3>Comments</h3>
+
                     <div id="commentBox">
                         @include('user.partials.commentbox')
                     </div>
 
+
+
                 </div>
+
 
 
                 <div class="col-md-3 col-sm-4">

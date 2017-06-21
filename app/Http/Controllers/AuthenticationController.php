@@ -65,7 +65,6 @@ class AuthenticationController extends Controller
                 'password' => $password,
                 'date_of_birth' => $req->dob,
                 'username' => $req->username,
-                'profile_url' => $req->username,
             ]);
             Auth::login($user);
             return redirect('/home');

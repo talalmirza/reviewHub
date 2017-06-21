@@ -6,6 +6,7 @@ use App\Category;
 use App\Review;
 use App\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
