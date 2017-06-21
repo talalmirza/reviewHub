@@ -1,3 +1,3 @@
 @foreach($tags as $tag)
-    <p><a href="#" style="text-decoration: none">#{{$tag->name}}</a></p>
+    <h4 id="tags"><a href="#" style="text-decoration: none"><span class="label label-default" style="font-weight: 500">#{{$tag->name}}</span></a></h4>
 @endforeach

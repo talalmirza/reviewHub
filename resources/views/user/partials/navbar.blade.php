@@ -52,11 +52,11 @@
                 </ul>
 
 
-                <form class="navbar-form navbar-inverse">
+                <form class="navbar-form navbar-inverse" action="/search" method="get">
 
 
                     <div class="input-group" id="usernvbar_search">
-                        <input type="text" class="form-control" placeholder="Search">
+                        <input type="text" class="form-control" placeholder="Search" name="keyword" value="@yield('searchkeyword')">
                         <div class="input-group-btn">
                             <button class="btn btn-default" type="submit">
                                 <i class="glyphicon glyphicon-search"></i>

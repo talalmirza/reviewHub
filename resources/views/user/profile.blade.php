@@ -49,7 +49,7 @@
         <br><br>
         <div class="container">
             <div style="padding-left: 5%">
-                <h2>Edit your Profile</h2>
+                <h2>Edit your Profile {{$member->first_name}}</h2>
             </div>
 
             <hr>
@@ -62,7 +62,7 @@
                     <div class="text-center"  style="margin-bottom: 10px;">
 
                         <div class="form-group ">
-                            <a href="#"><img id='img-upload' src="images/avatar.png" class="img-thumbnail"></a>
+                            <a href="#"><img id='img-upload' src="{{$member->avatar}}" class="img-thumbnail"></a>
 
                         </div>
 
@@ -83,12 +83,11 @@
 
 
                 <!-- edit form column -->
-                <div class="col-md-8 personal-info col-md-offset-1">
-                    <div class="alert alert-info alert-dismissable">
-                        <a class="panel-close close" data-dismiss="alert">×</a>
-                        <i class="fa fa-coffee"></i>
-                        This is an <strong>.alert</strong>. Use this to show important messages to the user.
-                    </div>
+                {{--<div class="alert alert-info alert-dismissable">--}}
+                {{--<a class="panel-close close" data-dismiss="alert">×</a>--}}
+                {{--<i class="fa fa-coffee"></i>--}}
+                {{--This is an <strong>.alert</strong>. Use this to show important messages to the user.--}}
+                {{--</div>--}}
 
                     <br>
 
@@ -98,7 +97,7 @@
 
                             <div class="form-group">
                                 <label for="username">Username</label>
-                                <input disabled type="text" class="form-control" id="username" value=" /username01" name="username">
+                                <input disabled type="text" class="form-control" id="username" value="{{$member->username}}" name="username">
                             </div>
 
 
@@ -108,7 +107,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="firstname">First name</label>
-                                        <input type="text" class="form-control" id="firstname" name="firstname">
+                                        <input type="text" class="form-control" id="firstname" name="firstname" value="{{$member->first_name}}">
                                     </div>
 
                                     <div class="form-group">
@@ -118,7 +117,7 @@
 
                                     <div class="form-group">
                                         <label for="email">Update Email</label>
-                                        <input type="email" class="form-control" id="email" name="email">
+                                        <input type="email" class="form-control" id="email" name="email" value="{{$member->email}}">
                                     </div>
 
                                 </div>
@@ -127,7 +126,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="lastname">Last name</label>
-                                        <input type="text" class="form-control" id="lastname" name="lastname">
+                                        <input type="text" class="form-control" id="lastname" name="lastname" value="{{$member->last_name}}">
                                     </div>
 
                                     <div class="form-group">
@@ -152,11 +151,11 @@
                                     <div class="form-group">
                                         <label>Select Region/Province</label>
 
-                                        <select id="countrySelect" size="1" class="form-control" onchange="makeSubmenu(this.value)">
-                                            <option>Region/Province</option>
+                                        <select id="countrySelect" size="1" class="form-control" onclick="makeSubmenu(this.value)" name="region" >
+                                            <option value="{{$member->region}}">{{$member->region}}</option>
                                             <option>Balochistan</option>
                                             <option>Punjab</option>
-                                            <option>Khyber Pakhtunkhawa</option>
+                                            <option>KhyberPakhtunkhawa</option>
                                             <option>Sindh</option>
                                         </select>
 
@@ -167,8 +166,8 @@
 
                                     <div class="form-group">
                                         <label>Select City</label>
-                                        <select id="citySelect" size="1" class="form-control">
-                                            <option>Select City</option>
+                                        <select id="citySelect" size="1" class="form-control" name="city" value="{{$member->city}}">
+                                            <option {{$member->city}}>{{$member->city}}</option>
                                         </select>
 
                                     </div>
@@ -182,11 +181,21 @@
 
                                 <div class="form-control form-inline">
 
-                                    <input type="radio" id="gender" name="gender">&nbsp;&nbsp;Male&nbsp;&nbsp;
-                                    <input type="radio" id="gender1" name="gender">&nbsp;&nbsp;Female
+                                    <input type="radio" id="gender" value="1" <?php echo ($member->gender==1)? 'checked':'' ?> name="gender">&nbsp;&nbsp;Male&nbsp;&nbsp;
+                                    <input type="radio" id="gender" value="0" <?php echo ($member->gender==0)? 'checked':'' ?> name="gender">&nbsp;&nbsp;Female
 
                                 </div>
 
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="bio">Tell us about your self</label>
+                                        <textarea name="bio" class="form-control" rows="4">{{$member->bio}}</textarea>
+                                    </div>
+                                </div>
                             </div>
 
 
@@ -195,7 +204,7 @@
                                     <div class="form-group">
 
                                         <label for="gender">Enter your Contact No.</label>
-                                        <input type="number" class="form-control" id="contact" name="contact">
+                                        <input type="text" class="form-control" id="contact" name="contact" value="{{$member->contact_number}}">
                                     </div>
                                 </div>
 
@@ -268,7 +277,7 @@
 
             Balochistan: ["Quetta","Khuzdar","Turbat","Chaman","Hub","Sibi","Zhob","Gwadar","Dera Murad Jamali","Dera Allah Yar","Usta Mohammad","Loralai","Pasni","Kharan","Mastung","Nushki","Kalat"],
             Punjab: ["AhmedNagerChatha","Attock","Bahawalnagar","Bahawalpur","Burewala","Chillianwala","Chakwal","Chichawatni","Chiniot","DeraGhaziKhan","Faisalabad","Gujranwala","Gujrat","Hafizabad","Jhelum","Kalabagh","KarorLalEsan","Kasur","Khanpur","Lahore","Mianwali","Multan","Muzaffargarh","Narowal","Okara","RahimYarKhan","Rawalpindi","Sadiqabad","Sahiwal","Sargodha","Shakargarh","Sheikhupura","Sialkot","Sohawav","Talagang","Taxila","obaTekSingh","Vehari","WahCantonment","Wazirabad"],
-            KhyberPakhtunkhwa:["Abbottabad","Adezai","Alpuri","Ayubia","Banda Daud Shah","Bannu","Batkhela","Battagram","Birote","Chakdara","Charsadda","Chitral","Daggar","Dargai","Darya Khan","Dera Ismail Khanv","Dir","Drosh","Hangu","Haripur","Karak","Kohat","Lakki Marwat","LatamberMadyan","Mansehra","Mardan","Mastuj","Mingora","Nowshera","Paharpur","Peshawar","Saidu Sharif","Swabi","Swat","Tangi","Tank","Thall","Timergara","Tordher"],
+            KhyberPakhtunkhawa:["Abbottabad","Adezai","Alpuri","Ayubia","Banda Daud Shah","Bannu","Batkhela","Battagram","Birote","Chakdara","Charsadda","Chitral","Daggar","Dargai","Darya Khan","Dera Ismail Khanv","Dir","Drosh","Hangu","Haripur","Karak","Kohat","Lakki Marwat","LatamberMadyan","Mansehra","Mardan","Mastuj","Mingora","Nowshera","Paharpur","Peshawar","Saidu Sharif","Swabi","Swat","Tangi","Tank","Thall","Timergara","Tordher"],
             Sindh:["Badin","Bhirkan","Bhiria City","Bhiria Road","Rajo Khanani","Chak","Dadu","Digri","Diplo","Dokri","Ghotki","Haala","Hyderabad","Islamkot","Jacobabad","Jamshoro","Jungshahi","Kandhkot","Kandiaro","Karachi","Kashmore","Keti Bandar","Khadro","Khairpur","Khipro","Kotri","Larkana","Matiari","Mehar","Mirpur Khas","Mithani","Mithi","Mehrabpur","Moro","Nagarparkar","Naudero","Naushahro Feroze","Naushara","Nawabshah","Qambar","Qasimabad","Ranipur","RatoderovRohri","Sakrand","Sanghar","Shahbandar","Shahdadkot","Shahdadpur","Shahpur Chakar","Shikarpaur","Sinjhoro","Sukkur","Tangwani","Tando Adam Khan","Tando Allahyar","Tando Muhammad Khan","Thatta","Thari Mirwah","Umerkot","Warah"],
         }
         function makeSubmenu(value) {

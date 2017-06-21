@@ -19,7 +19,7 @@ class HomeController extends Controller
         $categories = Category::all();
         $reviews = Review::latest()->get();
         $subreviews = Review::latest()->whereIn('reviewer_id', [2,5,6])->get();
-        $tags = Tag::all();
+        $tags = Tag::take(5)->get();
         return View('user.home',compact('reviews','categories','subreviews','tags'));
     }
 

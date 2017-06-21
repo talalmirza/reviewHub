@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
         $this->command->info('5 Ranks table seeded!');
 
         $this->call(ReviewsTableSeeder::class);
-        $this->command->info('5 Reviews table seeded!');
+        $this->command->info('6 Reviews table seeded!');
 
         $this->call(TagsTableSeeder::class);
         $this->command->info('5 Tags table seeded!');

@@ -24,11 +24,10 @@
             <div class="col-md-4 col-sm-4 col-xs-6">
 
                 <div class="text-center">
-                    <a href="{{ url('/') }}"> <img src="{{URL::asset('images/Logos/smallogo.png')}}" style="height:70%;width:auto;"></a>
+                    <a> <img src="{{URL::asset('images/Logos/smallogo.png')}}" style="height:70%;width:auto;"></a>
                 </div>
 
             </div>
-
 
         </div>
 

@@ -42,7 +42,7 @@ class CategoriesTableSeeder extends Seeder
         ));
 
         Category::create(array(
-            'name' => 'PC/Laptop',
+            'name' => 'PC-Laptop',
             'paladin_id' => $faker->numberBetween($min = 1, $max = 5),
             'vector' => 'laptop-png-6749.png'
         ));

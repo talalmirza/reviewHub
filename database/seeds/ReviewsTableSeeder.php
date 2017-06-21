@@ -17,7 +17,7 @@ class ReviewsTableSeeder extends Seeder
         $faker = Faker::create('en_US');
 
 
-        foreach (range(1, 5) as $index) {
+        foreach (range(1, 6) as $index) {
 
             Review::create(array(
                 'title' => $faker->realText($faker->numberBetween(10,20)),

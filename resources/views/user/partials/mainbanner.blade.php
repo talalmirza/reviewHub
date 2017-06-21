@@ -16,11 +16,11 @@
 
                 </div>
 
-                <form class="login-reg subscribe text-center form-inline">
+                <form class="login-reg subscribe text-center form-inline" action="/search" method="get">
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
                             <div class="form-group">
-                                <input type="text" class="form-control input-md" placeholder="Write here and we'll find for you..." >
+                                <input type="text" class="form-control input-md" placeholder="Write here and we'll find for you..." name="keyword">
                             </div>
                             <button type="submit" class="btn btn-info button">Search</button>
                         </div>

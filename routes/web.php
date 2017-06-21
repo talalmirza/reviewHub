@@ -2,12 +2,9 @@
 
 use Illuminate\Support\Facades\View;
 
-Route::get('/', function () {
+Route::get('/', 'LandingpageController@index');
 
-    return view('user.landingpage');
-});
 
-// Ahmed Butt
 Route::post('/reviewer', 'ReviewerController@store');
 Route::get('/reviewer/logout', 'ReviewerController@logout');
 Route::post('/reviewer/login', 'ReviewerController@login');
@@ -57,15 +54,8 @@ Route::get('/follower/delete/{id}', 'ReviewerController@delete');
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/search', 'SearchController@index');
-
-Route::get('/search', function () {
-
-
-    return view('user.search');
-
-
-});
+Route::get ('/search','SearchController@showSearch');
+Route::get ('/search/{keyword}','SearchController@categorySearch');
 
 
 Route::get('/review', function () {
@@ -76,14 +66,7 @@ Route::get('/review', function () {
 
 });
 
-
-Route::get('profile', function () {
-
-
-    return view('user.profile');
-
-
-});
+Route::get ('/profile/{username}', 'MemberProfileController@edit');
 
 
 Route::get('dashboard', function () {

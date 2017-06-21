@@ -13,6 +13,13 @@
 
         }
 
+        #tags > span > a:hover {
+
+            color:white;
+            font-weight: bold;
+
+        }
+
 
     </style>
 @endsection
