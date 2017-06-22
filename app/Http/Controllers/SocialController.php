@@ -56,9 +56,9 @@ class SocialController extends Controller
 
         return Member::create([
             'email' => $user->email,
-            'username' => $username,
-            'avatar' => 'images/avatar.png',
-            'first_name' => $username,
+            'username' => $username[0],
+            'first_name' => $username[0],
+
         ]);
     }
 }

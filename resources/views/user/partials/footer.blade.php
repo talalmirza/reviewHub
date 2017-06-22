@@ -4,7 +4,7 @@
     <div class="container">
 
         <div class="row" style="margin-top: 2%;">
-            <div class="col-md-7 col-sm-7 col-xs-6 col-md-offset-1 col-sm-offset-1">
+            <div class="col-md-4 col-sm-7 col-xs-6 col-md-offset-1 col-sm-offset-1">
                 <div class="row" style="margin-top:6%;">
 
                     <div id="mobile-center">
@@ -15,10 +15,24 @@
                             <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
                             <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
 
+
                         </ul>
+
+                        <li><a href="about">
+                                <img src="{{asset('images/vectors/icon-09-512.png')}}" alt="">
+                            </a></li>
                     </div>
 
                 </div>
+            </div>
+
+            <div class="col-md-4">
+
+                <a href="about">
+                    <img src="{{asset('images/vectors/icon-09-512.png')}}" alt="">
+                </a>
+                
+
             </div>
 
             <div class="col-md-4 col-sm-4 col-xs-6">
@@ -31,14 +45,11 @@
 
         </div>
 
-
-
         <hr style="border-top:5px solid #eee">
 
         <div class="text-center">
             <h6 style="color:white;">Copyright © <?php echo date("Y"); ?> ReviewHub - All Rights Reserved</h6>
         </div>
-
 
     </div>
 
