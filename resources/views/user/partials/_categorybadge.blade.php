@@ -3,7 +3,7 @@
     <div class="text-center">
 
        <span>
-           <a href="/search/{{$category->name}}" style="text-decoration: none; font-size: large">
+           <a href="/search/category/{{$category->name}}" style="text-decoration: none; font-size: large">
 
 
                <div class="w3-hover-shadow" style="padding-bottom: 5%; padding-top: 5%;">

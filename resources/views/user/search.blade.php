@@ -45,7 +45,7 @@
 @endsection
 
 @section('searchkeyword')
-    {{$keyword}}
+{{$keyword}}
 @endsection
 
 @section ('content')

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\DB;
 Use App\Review;
 Use App\Category;
 Use App\Tag;
@@ -118,12 +119,31 @@ class SearchController extends Controller
 
         $categories = Category::where('name', 'like', '%'.$keyword.'%')->get();
 
-        $categoriesid = Category::where('name', 'like', '%'.$keyword.'%')->pluck('id');
+        $categoriesid = $categories->pluck('id');
 
         $reviews = Review::where('category_id', '=', $categoriesid)->orderBy('id', 'desc')->get();
 
 
         return view ('user.category_displayreviews',compact('reviews','categories','keyword'));
+
+
+    }
+
+
+    public function tagSearch($keyword){
+
+        $tag = Tag::where('name', '=', $keyword)->get();
+
+        $tagid = $tag->pluck('id');
+
+        $reviewids = DB::table('review_tag')->select('review_id')->where('tag_id','=',$tagid)->get()->pluck('review_id');
+
+        $reviews = [];
+        foreach ($reviewids->toArray()  as $id){
+            array_push($reviews,Review::find($id));
+        }
+
+        return view ('user.tag_displayreviews',compact('reviews','$tag','keyword'));
 
 
     }

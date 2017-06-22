@@ -55,7 +55,7 @@ Route::get('home#subslist', 'HomeController@index');
 Route::get('home#category_list', 'HomeController@index');
 
 Route::get ('/search','SearchController@showSearch');
-Route::get ('/search/{keyword}','SearchController@categorySearch');
+Route::get ('/search/category/{keyword}','SearchController@categorySearch');
 Route::get ('/search/tag/{keyword}','SearchController@tagSearch');
 
 Route::get ('/profile/{username}', 'MemberProfileController@edit')->name('profileedit');

@@ -93,8 +93,8 @@
                     {!! $review->body !!}
 
                     <div style="margin-top: 10px">
-                        @foreach($tag_names as $tag)
-                            <h4 id="tags"><a href="#" style="text-decoration: none"><span class="label label-default" style="font-weight: 500">#{{$tag}}</span></a></h4>
+                        @foreach($tag_names as $tag_name)
+                            <h4 id="tags"><a href="/search/tag/{{$tag_name}}" style="text-decoration: none"><span class="label label-default" style="font-weight: 500">#{{$tag_name}}</span></a></h4>
                         @endforeach
                         </div>
 
