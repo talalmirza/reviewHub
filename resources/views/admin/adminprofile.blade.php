@@ -66,11 +66,11 @@
 
     <div class="page">
 
-        @include('user.partials.navbar')
+        @include('admin.admin_partials._navbar_admin')
 
 
         <br><br>
-        <div class="container">
+        <div class="container" style="margin-top: 20px;">
 
             @if (isset($message))
                 <div class="alert alert-success alert-dismissable">
@@ -80,7 +80,7 @@
                 </div>
             @endif
 
-            <div style="padding-left: 5%">
+            <div style="padding-left: 5%;">
                 <h2>Edit your Profile {{$reviewer->first_name}}</h2>
             </div>
 

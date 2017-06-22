@@ -63,7 +63,7 @@
                     </script>
                 </div>
             @endif
-            <a href="#">Reset password</a>
+          
         </form>
     </section>
 </section>

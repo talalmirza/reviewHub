@@ -1,4 +1,4 @@
-@extends('admin.masterlayout')
+    @extends('admin.masterlayout')
 
 
 
@@ -36,19 +36,19 @@
                             </ul>
                         </div>
 
-                        <div class="col-md-6 col-sm-12">
+                        {{--<div class="col-md-6 col-sm-12">--}}
 
 
-                            <div class="input-group col-md-9 col-sm-9" id="sm_searchbar" style="float:right">
+                            {{--<div class="input-group col-md-9 col-sm-9" id="sm_searchbar" style="float:right">--}}
 
-                                <input type="text" class="form-control"  placeholder="Search">
-                                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                {{--<input type="text" class="form-control"  placeholder="Search">--}}
+                                {{--<span class="input-group-addon"><i class="fa fa-search"></i></span>--}}
 
-                            </div>
+                            {{--</div>--}}
 
 
 
-                        </div>
+                        {{--</div>--}}
 
                     </div>
 

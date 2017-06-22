@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\File;
 use App\Review;
 use App\Category;
 use App\Tag;
+use App\Comment;
 
 use Session;
 use Purifier;
@@ -24,11 +25,8 @@ class ReviewController extends Controller
     {
 
         $reviews = Review::where('reviewer_id' , '=' , Session::get('admin')->id)->get();
-
         $reviewsdeleted = Review::onlyTrashed()->where('reviewer_id' , '=' , Session::get('admin')->id)->get();
-
         $categories = Category::all();
-
 
         return view('admin.posts', compact('reviews', 'reviewsdeleted', 'categories'));
 
@@ -60,8 +58,8 @@ class ReviewController extends Controller
     public function showDashboardPosts()
     {
 
-        $reviews = Review::orderBy('id', 'desc')->take(5)->get();
-
+        $reviews = Review::where('reviewer_id' , '=' , Session::get('admin')->id)->orderBy('id', 'desc')->take(5)->get();
+        
 
         return view('admin.dashboard', compact('reviews'));
 

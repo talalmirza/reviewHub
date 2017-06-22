@@ -97,7 +97,7 @@
                                     <div class="form-group">
 
                                         <label>Reviewer</label>
-                                        <input class="form-control" type="text" placeholder="Reviewer Name" name="reviewer_id" value="{{Session::get('admin')->first_name}}" disabled>
+                                        <input class="form-control" type="text" placeholder="Reviewer Name" name="reviewer_id" value="{{Session::get('admin')->first_name}}&nbsp;{{Session::get('admin')->last_name}}" disabled>
                                     </div>
 
                                     <div class="form-group">
