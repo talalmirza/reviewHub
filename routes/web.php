@@ -20,8 +20,10 @@ Route::get('/unlike/review/{id}', 'LikeController@unlike');
 Route::get('/comment/review/{id}', 'CommentController@index');
 
 Route::get('user/{username}', function ($username) {
-    $m = \App\Reviewer::where('username', $username)->first();
-    return view('user.user_profile')->with('reviewer', $m);
+    $reviewer = \App\Reviewer::where('username', $username)->first();
+    $reviews = \App\Review::where('reviewer_id','=',$reviewer->id)->orderBy('created_at', 'desc')->take(4)->get();
+
+    return view('user.user_profile', compact('reviewer','reviews'));
 });
 
 Route::get('/get/reviews', function () {
@@ -54,8 +56,10 @@ Route::get('/follower/delete/{id}', 'ReviewerController@delete');
 
 Route::get('/home', 'HomeController@index');
 
+
 Route::get ('/search','SearchController@showSearch');
 Route::get ('/search/{keyword}','SearchController@categorySearch');
+Route::get ('/search/tag/{keyword}','SearchController@tagSearch');
 
 
 Route::get('/review', function () {

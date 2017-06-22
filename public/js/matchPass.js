@@ -7,6 +7,6 @@ $('.re-password').on('keyup',function () {
         $('.passwordStatus').text('Password match');
     }else{
         $('.btn').attr('disabled', true);
-        $('.passwordStatus').text('Password donot match');
+        $('.passwordStatus').text('Password dont match');
     }
 });

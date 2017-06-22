@@ -33,7 +33,7 @@ class SocialController extends Controller
     public function glogin()
     {
         return Socialite::driver('google')
-           ->redirect();
+            ->redirect();
     }
 
     public function gregister()
@@ -51,8 +51,12 @@ class SocialController extends Controller
         }
 //        dd($user->getBirthday);
 //dd ($user);exit;
+        $parts = explode("@", $user->email);
+        // dd($parts[0]);exit;
+
         return Member::create([
             'email' => $user->email,
+            'username' => $parts[0],
         ]);
     }
 }

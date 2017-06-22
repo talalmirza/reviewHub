@@ -83,6 +83,7 @@ class ReviewerProfileController extends Controller
 
             $url = Storage::url($fileName);
 
+            
 
             $reviewer->avatar=$url;
 

@@ -25,7 +25,7 @@
                 <ul class="nav navbar-nav navbar-inverse navbar-right text-center">
                     @if(Auth::check())
 
-                        <li><a href="/profile/{{Auth::user()->username}}"><img src="{{ URL::asset ('images/avatar.png') }}"
+                        <li><a href="/profile/{{Auth::user()->username}}"><img src="{{ asset(Auth::user()->avatar) }}"
                                                                  class="img-circle" style="width:25px;height:auto;">
                                 &nbsp;&nbsp;<span>{{Auth::user()->first_name}}</span></a></li>
 
@@ -44,9 +44,11 @@
                             </ul>
                         </li>
                     @else
+                        <li>
                         <a href="/" style="text-decoration: none;color: white;">
                             <li class="text-center">Login</li>
                         </a>
+                        </li>
                     @endif
 
                 </ul>

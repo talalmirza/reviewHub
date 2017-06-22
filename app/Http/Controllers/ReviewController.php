@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+
 
 
 use App\Review;
@@ -141,9 +143,18 @@ class ReviewController extends Controller
     public function show(Review $review)
     {
 
+        $tag_ids= DB::table('review_tag')->where('review_id','=',$review->id)->get()->pluck('tag_id');;
 
-        $tags = Tag::all();
-        return view('user.reviewarticle',compact('review','tags'));
+        //dd($tag_ids);exit;
+
+        $tag_names = [];
+        foreach ($tag_ids->toArray()  as $id){
+            array_push($tag_names,Tag::find($id)->name);
+        }
+
+        //dd($tag_names);exit;
+
+        return view('user.reviewarticle',compact('review','tag_names'));
     }
 
 

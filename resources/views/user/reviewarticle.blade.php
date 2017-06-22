@@ -51,11 +51,17 @@
 
                         <p style="font-weight: 400;display: inline-block;">
                             <i class="fa fa-user" aria-hidden="true"></i>
-                            {{$review->reviewer->first_name}}&nbsp;{{$review->reviewer->first_name}}&nbsp;
+                            {{$review->reviewer->first_name}}&nbsp;{{$review->reviewer->last_name}}&nbsp;
                         </p>
 
                         <p style="color: darkgrey; display: inline-block;">
-                            <a href="#" id="username" style="text-decoration: none;"><i class="fa fa-at"></i>{{$review->reviewer->username}}</a>
+                            <a href="
+@if(Auth::check())
+                                    /user/{{$review->reviewer->username}}
+                            @else
+                                    #
+                            @endif
+                                    " id="username"><i class="fa fa-at"></i>{{$review->reviewer->username}}</a>
                             &nbsp;|&nbsp;&nbsp;<i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;{{$review->created_at->format('F j')}}
                         </p>
 
@@ -71,8 +77,11 @@
 
                     <div class="text-center">
 
+                        @if (isset($review->featureimage))
                         <img src="{{  asset($review->featureimage) }}" alt=""
                              style="width:90%; border-radius: 3px ;height:auto;">
+
+                            @endif
 
 
                     </div>
@@ -84,7 +93,9 @@
                     {!! $review->body !!}
 
                     <div style="margin-top: 10px">
-                    @include('user.partials.tags')
+                        @foreach($tag_names as $tag)
+                            <h4 id="tags"><a href="#" style="text-decoration: none"><span class="label label-default" style="font-weight: 500">#{{$tag}}</span></a></h4>
+                        @endforeach
                         </div>
 
                     <hr>
