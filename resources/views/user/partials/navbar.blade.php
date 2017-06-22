@@ -38,17 +38,33 @@
                                     <li class="text-center">Logout</li>
                                 </a>
                                 <hr>
-                                <a href="#" style="text-decoration: none;color: white;">
+                                <a href="/contact" style="text-decoration: none;color: white;">
                                     <li class="text-center">Contact Us</li>
+                                </a>
+                                <hr>
+                                <a href="/about" style="text-decoration: none;color: white;">
+                                    <li class="text-center" style="margin-bottom: 10px">About Us</li>
                                 </a>
                             </ul>
                         </li>
                     @else
-                        <li>
+
+
+                        <li class="text-center">
+                            <a href="/about" style="text-decoration: none;color: white;">
+                        About Us
+                        </a></li>
+
+                        <li class="text-center">
+                            <a href="/contact" style="text-decoration: none;color: white;">
+                        Contact Us
+                        </a></li>
+
+                        <li class="text-center">
                         <a href="/" style="text-decoration: none;color: white;">
-                            <li class="text-center">Login</li>
-                        </a>
-                        </li>
+                            Login</a></li>
+
+
                     @endif
 
                 </ul>
@@ -57,6 +73,7 @@
                 <form class="navbar-form navbar-inverse" action="/search" method="get">
 
 
+                    <div style="width: 60%">
                     <div class="input-group" id="usernvbar_search">
                         <input type="text" class="form-control" placeholder="Search" name="keyword" value="@yield('searchkeyword')">
                         <div class="input-group-btn">
@@ -64,6 +81,8 @@
                                 <i class="glyphicon glyphicon-search"></i>
                             </button>
                         </div>
+                    </div>
+
                     </div>
 
                 </form>

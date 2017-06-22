@@ -241,9 +241,8 @@
                             <br>
 
 
-                            <div style="float:right;">
-                                <button type="submit" class="btn btn-success">Apply</button>
-                            </div>
+
+                                <button type="submit" class="btn btn-info btn-block">Apply</button>
 
                         </div>
 

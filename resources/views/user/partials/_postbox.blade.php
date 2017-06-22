@@ -59,7 +59,7 @@
                                             "
 
                                     @if($review->isLiked($review->id))
-                                    style="color: yellow;"
+                                    style="color: dodgerblue;"
                                     @endif
 
                             >{{$review->likes->count()}}</i></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

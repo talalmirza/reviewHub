@@ -6,7 +6,7 @@
             <label for="contactComment">Comment</label>
             <textarea class="form-control" id="comment"></textarea>
         </div>
-        <button type="button" class="btn btn-success comment-btn" data-id="{{$review->id}}">Submit</button>
+        <button type="button" class="btn btn-info btn-block  comment-btn" data-id="{{$review->id}}">Submit</button>
     </form>
 </div>
 <hr>

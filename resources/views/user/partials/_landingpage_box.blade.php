@@ -10,7 +10,7 @@
             </div>
             <div class="w3-row">
                 <div class="w3-third w3-left">
-                    <h5>{{$review->caption}}</h5>
+                    <div style="height: 30px;"></div>
                 </div>
 
             </div>

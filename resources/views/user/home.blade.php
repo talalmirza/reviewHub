@@ -164,7 +164,7 @@
                 success: function (res) {
                     console.log("like " + res);
                     $(_this).html(res[0]);
-                    $(_this).css('color', 'yellow');
+                    $(_this).css('color', 'DodgerBlue');
                     $(_this).removeClass('like-btn');
                     $(_this).addClass('unlike-btn', true);
                     $(_this).unbind();
