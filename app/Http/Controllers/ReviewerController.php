@@ -79,6 +79,11 @@ class ReviewerController extends Controller
             $r->avatar = $file_name;
 
         }
+        else{
+
+            $r->avatar = 'images/avatar.png';
+
+        }
 
         $r->save();
 

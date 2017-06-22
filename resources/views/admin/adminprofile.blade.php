@@ -107,7 +107,7 @@
                             <div class="text-center"  style="margin-bottom: 10px;">
 
                                 <div class="form-group ">
-                                    <a href="#"><img id='img-upload' name='img-upload' class="img-thumbnail" src="{{ url ($reviewer->avatar) }}" ></a>
+                                    <a href="#"><img id='img-upload' name='img-upload' class="img-thumbnail" src="{{ asset ($reviewer->avatar) }}" ></a>
 
                                 </div>
 
