@@ -99,12 +99,12 @@ class SearchController extends Controller
 
         }
 
-        $reviews = Review::where('title', 'like', '%'.$keyword.'%')->get();
+        $reviews = Review::where('title', 'like', '%'.$keyword.'%')->orderBy('id', 'desc')->get();
 
 
         $categories = Category::where('name', 'like', '%'.$keyword.'%')->get();
 
-        $tags = Tag::with('reviews')->where('name', 'like', '%'.$keyword.'%')->get();
+        $tags = Tag::with('reviews')->where('name', 'like', '%'.$keyword.'%')->orderBy('id', 'desc')->get();
 
 
 
@@ -120,7 +120,7 @@ class SearchController extends Controller
 
         $categoriesid = Category::where('name', 'like', '%'.$keyword.'%')->pluck('id');
 
-        $reviews = Review::where('category_id', '=', $categoriesid)->get();
+        $reviews = Review::where('category_id', '=', $categoriesid)->orderBy('id', 'desc')->get();
 
 
         return view ('user.category_displayreviews',compact('reviews','categories','keyword'));

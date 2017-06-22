@@ -2,12 +2,11 @@
 
 use Illuminate\Support\Facades\View;
 
+//User Side Routes
+
 Route::get('/', 'LandingpageController@index');
 
-
 Route::post('/reviewer', 'ReviewerController@store');
-Route::get('/reviewer/logout', 'ReviewerController@logout');
-Route::post('/reviewer/login', 'ReviewerController@login');
 Route::post('/register', 'AuthenticationController@register');
 Route::post('/login', 'AuthenticationController@login');
 Route::get('/logout', 'AuthenticationController@logout');
@@ -15,15 +14,17 @@ Route::get('/auth/facebook', 'SocialController@login');
 Route::get('auth/facebook/callback', 'SocialController@register');
 Route::get('/auth/google', 'SocialController@glogin');
 Route::get('auth/google/callback', 'SocialController@gregister');
+
 Route::get('/like/review/{id}', 'LikeController@like');
 Route::get('/unlike/review/{id}', 'LikeController@unlike');
 Route::get('/comment/review/{id}', 'CommentController@index');
+
 
 Route::get('user/{username}', function ($username) {
     $reviewer = \App\Reviewer::where('username', $username)->first();
     $reviews = \App\Review::where('reviewer_id','=',$reviewer->id)->orderBy('created_at', 'desc')->take(4)->get();
 
-    return view('user.user_profile', compact('reviewer','reviews'));
+    return view('user.user_reviewerprofile', compact('reviewer','reviews'));
 });
 
 Route::get('/get/reviews', function () {
@@ -48,104 +49,17 @@ Route::get('unfollow/{username}', function ($username) {
     return redirect()->back();
 });
 
-Route::get('/followers', 'ReviewerController@get_followers');
-Route::get('/follower/delete/{id}', 'ReviewerController@delete');
-
-
-// ---
-
 Route::get('/home', 'HomeController@index');
-
+Route::get('home##livefeed', 'HomeController@index');
+Route::get('home#subslist', 'HomeController@index');
+Route::get('home#category_list', 'HomeController@index');
 
 Route::get ('/search','SearchController@showSearch');
 Route::get ('/search/{keyword}','SearchController@categorySearch');
 Route::get ('/search/tag/{keyword}','SearchController@tagSearch');
 
-
-Route::get('/review', function () {
-
-
-    return view('user.reviewarticle');
-
-
-});
-
 Route::get ('/profile/{username}', 'MemberProfileController@edit')->name('profileedit');
 Route::POST ('/profile/{username}', 'MemberProfileController@update');
-
-Route::get ('/reviewer/profile/{username}', 'ReviewerProfileController@edit')->name('profileedit');
-Route::POST ('/reviewer/profile/{username}', 'ReviewerProfileController@update');
-
-
-Route::get('dashboard', function () {
-
-
-    return view('admin.dashboard');
-
-
-});
-
-Route::get('home##livefeed', 'HomeController@index');
-Route::get('home#subslist', 'HomeController@index');
-Route::get('home#category_list', 'HomeController@index');
-
-
-Route::get('posts', function () {
-
-
-    return view('admin.posts');
-
-
-});
-
-Route::get('settings', function () {
-
-
-    return view('admin.settings');
-
-
-});
-
-
-Route::get('secretdoor', function () {
-
-
-    return view('admin.secretdoor');
-
-
-});
-
-
-Route::get('contact', function () {
-
-
-    return view('user.contact');
-
-
-});
-
-Route::get('newpost', function () {
-
-
-    return view('admin.newpost');
-
-
-});
-
-Route::get('reviewerapply', function () {
-
-
-    return view('user.reviewerapply');
-
-
-});
-
-
-Route::get('restore/{id}', 'ReviewController@reviewRestore');
-
-Route::get('delete/{id}', 'ReviewController@confirmDelete');
-
-Route::get('/dashboard', 'ReviewController@showDashboardPosts');
 
 Route::post('/like', [
     'uses' => 'ReviewController@likeReview',
@@ -153,8 +67,36 @@ Route::post('/like', [
 ]);
 
 
-Route::resource('/review', 'ReviewController');
+Route::get('contact', function () {
+    return view('user.contact');
+});
 
+
+//Admin Side Routes
+
+Route::get('secretdoor', function () {
+    return view('admin.secretdoor');
+});
+
+Route::group(['middleware' => 'checkadmin'],function(){
+
+    Route::get('/dashboard', 'ReviewController@showDashboardPosts');
+
+    Route::get ('/reviewer/profile/{username}', 'ReviewerProfileController@edit')->name('profileedit');
+    Route::POST ('/reviewer/profile/{username}', 'ReviewerProfileController@update');
+
+    Route::get('restore/{id}', 'ReviewController@reviewRestore');
+    Route::get('delete/{id}', 'ReviewController@confirmDelete');
+    Route::get('/reviewer/logout', 'ReviewerController@logout');
+
+    Route::get('/followers', 'ReviewerController@get_followers');
+    Route::get('/follower/delete/{id}', 'ReviewerController@delete');
+    
+});
+
+Route::post('/reviewer/login', 'ReviewerController@login');
+
+Route::resource('/review', 'ReviewController');
 
 ?>
 
