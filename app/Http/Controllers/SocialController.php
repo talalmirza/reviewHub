@@ -51,12 +51,14 @@ class SocialController extends Controller
         }
 //        dd($user->getBirthday);
 //dd ($user);exit;
-        $parts = explode("@", $user->email);
+        $username = explode("@", $user->email);
         // dd($parts[0]);exit;
 
         return Member::create([
             'email' => $user->email,
-            'username' => $parts[0],
+            'username' => $username,
+            'avatar' => 'images/avatar.png',
+            'first_name' => $username,
         ]);
     }
 }

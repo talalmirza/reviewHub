@@ -78,6 +78,11 @@ Route::get('secretdoor', function () {
     return view('admin.secretdoor');
 });
 
+Route::get('reviewerapply', function () {
+
+   return view ('user.reviewerapply');
+});
+
 Route::group(['middleware' => 'checkadmin'],function(){
 
     Route::get('/dashboard', 'ReviewController@showDashboardPosts');
@@ -91,7 +96,7 @@ Route::group(['middleware' => 'checkadmin'],function(){
 
     Route::get('/followers', 'ReviewerController@get_followers');
     Route::get('/follower/delete/{id}', 'ReviewerController@delete');
-    
+
 });
 
 Route::post('/reviewer/login', 'ReviewerController@login');
