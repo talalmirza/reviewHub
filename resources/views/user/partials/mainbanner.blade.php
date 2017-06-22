@@ -12,7 +12,7 @@
 
                 <div class="text-center">
 
-                    <img src="images/logos/fullogo.png" id="mainpage_logo">
+                    <a href="/" style="text-decoration: none;"><img src="images/logos/fullogo.png" id="mainpage_logo"></a>
 
                 </div>
 

@@ -36,7 +36,7 @@
         <hr style="border-top:5px solid #eee">
 
         <div class="text-center">
-            <h6 style="color:white;">Copyright © 2016 ReviewHub - All Rights Reserved</h6>
+            <h6 style="color:white;">Copyright © <?php echo date("Y"); ?> ReviewHub - All Rights Reserved</h6>
         </div>
 
 
