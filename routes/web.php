@@ -42,6 +42,7 @@ Route::get('follow/{username}', function ($username) {
     ]);
     return redirect()->back();
 });
+
 Route::get('unfollow/{username}', function ($username) {
     $m = \App\Reviewer::where('username', $username)->first();
     \App\MemberReviewer::where('member_id', \Illuminate\Support\Facades\Auth::user()->id)

@@ -21,7 +21,7 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/reviewer/profile/{{Session::get('admin')->username}}">{{Session::get('admin')->first_name}} &nbsp;<img src="{{ asset(Session::get('admin')->avatar) }}"
+                <li><a href="/reviewer/profile/{{Session::get('admin')->username}}">{{Session::get('admin')->first_name}} &nbsp;<img src="{{ asset (Session::get('admin')->avatar) }}"
                                                                                                        class="img-circle" style="width:25px;height:auto;"></a></li>
 
                 <li><a href="/reviewer/logout">Logout</a></li>

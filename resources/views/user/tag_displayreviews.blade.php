@@ -41,7 +41,7 @@
     @include ('user.partials.navbar')
     <div class="container" style="background-color: white">
         <div class="row" style="margin-bottom: 50px;">
-            <div class="row"><h1>Search results for category "#{{$keyword}}"</h1></div>
+            <div class="row"><h1>Search results for tag "#{{$keyword}}"</h1></div>
             <div class="row">
 
                 <div class="col-md-2 col-sm-2 w3-card w3-darkgrey" id="card" style=" background-color: #0F0F0F; padding-top: 20px;margin-top: 30px;">
