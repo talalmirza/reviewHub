@@ -42,7 +42,7 @@
 
 
             <div class="form-group">
-                <input type="email" name="email" required class="form-control" placeholder="Enter email or nickname" />
+                <input type="email" name="email" required class="form-control" placeholder="Enter email" />
                 <span class="glyphicon glyphicon-user"></span>
             </div>
 
