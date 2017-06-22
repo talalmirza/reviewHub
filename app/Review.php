@@ -46,4 +46,11 @@ class Review extends Model
     {
         return $this->belongsTo(Reviewer::class);
     }
+
+    public function latestComment()
+    {
+        return $this->comments()->latest()->take(1)->get();
+    }
+
+
 }

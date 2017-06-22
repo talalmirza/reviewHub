@@ -22,54 +22,39 @@
 
                 @include ('admin.admin_partials._sidebar')
 
-                <div class="col-md-4 col-sm-4 col-md-offset-1">
-
-                    <h4 class="text-center">Recent Posts</h4>
+                <div class="col-md-8 col-sm-8 col-md-offset-1">
 
                     <div class="row">
 
-
-                        @foreach($reviews as $r)
-                        <div class="list-group">
-                            <a href="/review/{{$r->id}}" class="list-group-item active">
-
-
-                                <h4 class="list-group-item-heading">{{$r->title}}</h4>
-
-                                <p class="list-group-item-text">{{$r->caption}}</p>
-                            </a>
+                        <div class="col-md-6 col-sm-6">
+                            <h4 class="text-center">Recent Posts</h4>
                         </div>
 
-                            @endforeach
-
+                        <div class="col-md-6 col-sm-6">
+                            <h4 class="text-center">Recent Comments</h4>
+                        </div>
 
                     </div>
-
-                </div>
-                <div class="col-md-4 col-sm-4 col-md-offset-1 col-sm-offset-1">
-                    <h4 class="text-center">Latest Comments</h4>
 
                     <div class="row">
+                        @foreach($reviews as $review)
+                        <div class="row">
 
-                        @foreach($reviews as $r)
-                            <div class="list-group">
-                                <a href="/review/{{$r->id}}" class="list-group-item active">
+                            <div class="col-md-6 col-sm-6">
+                                @include('admin.admin_partials._review')                            </div>
 
-
-                                    <h4 class="list-group-item-heading">{{$r->title}}</h4>
-
-                                    <p class="list-group-item-text">{{$r->caption}}</p>
-                                </a>
+                            <div class="col-md-6 col-sm-6">
+                                @include('admin.admin_partials._comment')
                             </div>
 
+                        </div>
                         @endforeach
-
-
-                    </div>
 
                     </div>
 
                 </div>
+
+
             </div>
         </div>
 

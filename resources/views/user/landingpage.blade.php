@@ -117,6 +117,11 @@
 
                 </div><!-- end row -->
 
+                <br><br>
+                <div class="row">
+                    <a class="btn btn-blue btn-pill" style="float:right; text-transform: capitalize;" href="{{ url ('home') }}">More Reviews</a>
+                </div>
+
 
             </div><!-- end container -->
 
