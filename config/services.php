@@ -45,4 +45,5 @@ return [
         'client_secret' => '8Ar7RVhtbOh_8kcV17KPauG1',
         'redirect' => 'http://localhost:8000/auth/google/callback',
     ],
+
 ];
