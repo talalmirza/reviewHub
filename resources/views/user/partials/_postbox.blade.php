@@ -40,8 +40,7 @@
                     <p>{{$review->caption}}</p>
 
                     @if (isset($review->featureimage))
-                    <img src="{{asset($review->featureimage)}}" class="media-object"
-                         style="width:70%; border-radius: 3px ;height:auto;">
+                    <img src="{{asset($review->featureimage)}}" class="media-object" style="width:70%; border-radius: 3px ;height:auto;">
                         @endif
 
                 </div>

@@ -234,6 +234,14 @@ class ReviewController extends Controller
 
         Review::destroy($review->id);
 
+        $tag_ids = DB::table('review_tag')
+            ->select('tag_id')
+            ->where('review_id','=',$review->id)
+            ->groupBy('tag_id')
+            ->get()->pluck('tag_id');
+
+        DB::table('review_tag')->whereIn('tag_id', $tag_ids)->delete();
+
         return redirect()->route('review.index');
     }
 }
