@@ -1,4 +1,8 @@
-<p align="center"><img src="https://github.com/talalmirza/reviewHub/blob/master/public/images/logos/fullogo.png></p>
+<p align="center">![alt tag](http://imgur.com/a/VrVPN)</p>
+
+![alt text](https://raw.githubusercontent.com//talalmirza/reviewHub/master/public/images/fullogo.png)
+
+    
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
@@ -7,7 +11,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Review Hub
+## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
 
