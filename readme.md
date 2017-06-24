@@ -1,4 +1,4 @@
-<p align="center"><img src="https://drive.google.com/open?id=0B9edJQ72ScyMTmNudXhjRkRZYW8"></p>
+<p align="center"><img src="http://imgur.com/a/VrVPN"></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
